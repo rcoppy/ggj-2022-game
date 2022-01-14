@@ -1,2 +1,10 @@
-- name: Unity - Request Activation File
-  uses: game-ci/unity-request-activation-file@v1.2
+on:
+  workflow_call
+
+jobs:
+  manual-license-request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Unity - Request Activation File
+        uses: game-ci/unity-request-activation-file@v1.2
