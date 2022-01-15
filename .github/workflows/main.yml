@@ -92,7 +92,7 @@ jobs:
         with:
           projectPath: ${{ env.PROJECT_PATH }}
           targetPlatform: ${{ matrix.targetPlatform }}
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v2.3.1
         with:
           name: build_${{ matrix.targetPlatform }}
           path: build
