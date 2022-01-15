@@ -96,3 +96,37 @@ jobs:
         with:
           name: build_${{ matrix.targetPlatform }}
           path: build/${{ matrix.targetPlatform }}
+          
+  deployToGitHubPages:
+    # needs: [build]
+    name: Deploy playtest build to GitHub Pages branch
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          lfs: true
+      # - name: Download WebGL Build Artifact
+      #  uses: actions/download-artifact@v2
+      #  with:
+      #    name: build_${{ matrix.targetPlatform }}
+      #    path: build/${{ matrix.targetPlatform }}
+      - name: Get Version
+        id: versioning
+        uses: paulhatch/semantic-version@v4.0.2
+        with:
+          format: "${major}.${minor}.${patch}"
+      - name: Copy build to github pages branch
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          git checkout gh-pages
+          cd docs
+          
+          echo "Test push commit to the remote in the workflow" >> test.txt
+
+          git add -A
+          git commit -m "Update test.txt"
+          git push  
