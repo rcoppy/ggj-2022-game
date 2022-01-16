@@ -110,8 +110,8 @@ jobs:
       - name: Download WebGL Build Artifact
         uses: actions/download-artifact@v2
         with:
-          name: build_${{ build.matrix.targetPlatform }}
-          path: build/${{ build.matrix.targetPlatform }}
+          name: build_${{ needs.build.matrix.targetPlatform }}
+          path: build/${{ needs.build.matrix.targetPlatform }}
       - name: Get Version
         id: versioning
         uses: paulhatch/semantic-version@v4.0.2
