@@ -101,6 +101,11 @@ jobs:
     needs: [build]
     name: Deploy playtest build to GitHub Pages branch
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        targetPlatform:
+          - WebGL
     steps: 
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -110,8 +115,8 @@ jobs:
       - name: Download WebGL Build Artifact
         uses: actions/download-artifact@v2
         with:
-          name: build_${{ needs.build.matrix.targetPlatform }}
-          path: build/${{ needs.build.matrix.targetPlatform }}
+          name: build_${{ matrix.targetPlatform }}
+          path: build/${{ matrix.targetPlatform }}
       - name: Get Version
         id: versioning
         uses: paulhatch/semantic-version@v4.0.2
