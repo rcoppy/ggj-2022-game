@@ -110,8 +110,8 @@ jobs:
       - name: Download WebGL Build Artifact
         uses: actions/download-artifact@v2
         with:
-          name: build_${{ matrix.targetPlatform }}
-          path: build/${{ matrix.targetPlatform }}
+          name: build_${{ build.matrix.targetPlatform }}
+          path: build/${{ build.matrix.targetPlatform }}
       - name: Get Version
         id: versioning
         uses: paulhatch/semantic-version@v4.0.2
@@ -136,5 +136,5 @@ jobs:
           ls -R
           
           git add -A
-          git commit -m "Deploy ${{env.PROJECT_PATH}} v{{versioning}}"
+          git commit -m "Deploy ${{env.PROJECT_PATH}} v{{steps.versioning.outputs.version}}"
           git push  
