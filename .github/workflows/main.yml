@@ -98,7 +98,7 @@ jobs:
           path: build/${{ matrix.targetPlatform }}
           
   deployToGitHubPages:
-    # needs: [build]
+    needs: [build]
     name: Deploy playtest build to GitHub Pages branch
     runs-on: ubuntu-latest
     steps: 
@@ -107,11 +107,11 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
-      # - name: Download WebGL Build Artifact
-      #  uses: actions/download-artifact@v2
-      #  with:
-      #    name: build_${{ matrix.targetPlatform }}
-      #    path: build/${{ matrix.targetPlatform }}
+      - name: Download WebGL Build Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: build_${{ matrix.targetPlatform }}
+          path: build/${{ matrix.targetPlatform }}
       - name: Get Version
         id: versioning
         uses: paulhatch/semantic-version@v4.0.2
@@ -125,8 +125,16 @@ jobs:
           git checkout gh-pages
           cd docs
           
-          echo "Test push commit to the remote in the workflow" >> test.txt
+          rm -rf * 
+          
+          echo "Copying build artifact to gh-pages directory"
 
+          cd ..
+          cp -a WebGL/. .
+          rm -rf WebGL
+          
+          ls -R
+          
           git add -A
-          git commit -m "Update test.txt"
+          git commit -m "Deploy ${{env.PROJECT_PATH}} v{{versioning}}"
           git push  
