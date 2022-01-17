@@ -136,8 +136,10 @@ jobs:
 
           cd ..
           cp -a build/WebGL/WebGL/. docs/.
+          rm -rf build
+          
           ls -R
           
-          git add -A
-          git commit -m "Deploy ${{env.PROJECT_PATH}} v{{steps.versioning.outputs.version}}"
+          git add .
+          git commit -m "Deploy ${{env.PROJECT_PATH}} v${{steps.versioning.outputs.version}}"
           git push  
