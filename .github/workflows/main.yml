@@ -135,7 +135,7 @@ jobs:
           echo "Copying build artifact to gh-pages directory"
 
           cd ..
-          cp -a ggj-2022-game/build/WebGL/. docs/.
+          cp -a build/WebGL/WebGL/. docs/.
           ls -R
           
           git add -A
