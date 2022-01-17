@@ -101,11 +101,6 @@ jobs:
     needs: [build]
     name: Deploy playtest build to GitHub Pages branch
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        targetPlatform:
-          - WebGL
     steps: 
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -115,8 +110,8 @@ jobs:
       - name: Download WebGL Build Artifact
         uses: actions/download-artifact@v2
         with:
-          name: build_${{ matrix.targetPlatform }}
-          path: build/${{ matrix.targetPlatform }}
+          name: build_WebGL
+          path: build/WebGL
       - name: Get Version
         id: versioning
         uses: paulhatch/semantic-version@v4.0.2
@@ -128,16 +123,19 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
           git checkout gh-pages
-          cd docs
           
+          pwd
+          ls -R
+          
+          echo "Clearing docs folder"
+          
+          cd docs
           rm -rf * 
           
           echo "Copying build artifact to gh-pages directory"
 
           cd ..
-          cp -a WebGL/. .
-          rm -rf WebGL
-          
+          cp -a ggj-2022-game/build/WebGL/. docs/.
           ls -R
           
           git add -A
