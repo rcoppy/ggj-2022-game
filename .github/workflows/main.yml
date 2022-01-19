@@ -5,7 +5,7 @@ on:
 
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-  PROJECT_PATH: ./game-source
+  PROJECT_PATH: ./game-builtin-renderer
 
 jobs:
   checklicense:
@@ -74,7 +74,9 @@ jobs:
       fail-fast: false
       matrix:
         targetPlatform:
-          - WebGL
+          - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
+          - StandaloneWindows64 # Build a Windows 64-bit standalone.
+          - WebGL 
     steps:
       - uses: actions/checkout@v2
         with:
