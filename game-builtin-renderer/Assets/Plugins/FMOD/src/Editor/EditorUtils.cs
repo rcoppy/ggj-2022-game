@@ -362,9 +362,7 @@ namespace FMODUnity
             style = GUI.skin.label;
         }
 
-#if !FMOD_STORE_UPLOAD
         [InitializeOnLoadMethod]
-#endif
         static void Startup()
         {
             EditorApplication.update += Update;
