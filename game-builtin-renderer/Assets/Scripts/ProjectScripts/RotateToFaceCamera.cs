@@ -22,7 +22,7 @@ public class RotateToFaceCamera : MonoBehaviour
             var rotation = Quaternion.FromToRotation(transform.forward, _targetCamera.forward) *
                            Quaternion.FromToRotation(transform.up, _targetCamera.up);
 
-            transform.rotation = rotation; 
+            transform.rotation *= rotation; 
         }
     }
 }
