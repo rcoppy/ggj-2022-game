@@ -125,7 +125,7 @@ jobs:
           
           echo "Attempting to fetch links"
           
-          node link-fetch${{ secrets.API_GH_KEY }} ${{ github.run_id }}
+          node link-fetch ${{ secrets.API_GH_KEY }} ${{ github.run_id }}
           
           git add . 
           git commit -m "updated artifact links to match run ${{ github.run_id }}"
