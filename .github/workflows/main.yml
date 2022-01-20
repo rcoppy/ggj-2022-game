@@ -99,11 +99,11 @@ jobs:
           path: build/${{ matrix.targetPlatform }}
           
   updateArtifactURLs: 
-    # needs: [build]
+    needs: [build]
     name: Update artifact URLs in ci submodule
     runs-on: ubuntu-latest
     env: 
-      run_id: 1721118485 # ${{ github.run_id }}
+      run_id: ${{ github.run_id }} # 1721118485
     steps: 
       - name: Checkout repository
         uses: actions/checkout@v2
