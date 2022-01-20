@@ -76,7 +76,7 @@ jobs:
         targetPlatform:
           - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
           - StandaloneWindows64 # Build a Windows 64-bit standalone.
-          - WebGL 
+          # - WebGL 
     steps:
       - uses: actions/checkout@v2
         with:
@@ -98,6 +98,40 @@ jobs:
           name: build_${{ matrix.targetPlatform }}
           path: build/${{ matrix.targetPlatform }}
           
+  updateArtifactURLs: 
+    needs: [build]
+    name: Update artifact URLs in ci submodule
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with: 
+          lfs: true
+          submodules: recursive
+      - name: Use Node.js 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Fetch and store artifact links
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          cd ./ggj-2022-ci-page
+          
+          git pull origin/master
+          
+          npm install
+          
+          echo "Attempting to fetch links"
+          
+          node link-fetch${{ secrets.API_GH_KEY }} ${{ github.run_id }}
+          
+          git add . 
+          git commit -m "updated artifact links to match run ${{ github.run_id }}"
+          git push
+          
+    
   deployToGitHubPages:
     needs: [build]
     name: Deploy playtest build to GitHub Pages branch
