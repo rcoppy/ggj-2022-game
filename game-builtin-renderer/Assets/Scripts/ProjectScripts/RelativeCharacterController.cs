@@ -80,7 +80,12 @@ namespace GGJ2022
         }
 
         Collider _groundCollider = null; 
-        
+
+        public Camera ReferenceCamera
+        {
+            set { _referenceCamera = value; }
+        }
+
         // Start is called before the first frame update
         void Start()
         {

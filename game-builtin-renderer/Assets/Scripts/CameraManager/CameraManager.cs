@@ -10,6 +10,8 @@ public class CameraManager : MonoBehaviour
     private Camera activeCam;
     private Camera previousCam;
 
+    Camera[] _camerasInScene; 
+
     [SerializeField]
     [Tooltip("assigning a user-defined transition camera is optional")]
     private Camera transitionCam;
@@ -17,6 +19,12 @@ public class CameraManager : MonoBehaviour
     private Transform transitionStartTransform;  
    
     public static CameraManager instance = null;              //Static instance of CameraManager which allows it to be accessed by any other script.
+
+    public delegate void TransitionStarted(Camera newCam);
+    public delegate void TransitionEnded(Camera finalCam);
+
+    public TransitionStarted OnTransitionStarted;
+    public TransitionEnded OnTransitionEnded;
 
     #region getters/setters
 
@@ -67,6 +75,13 @@ public class CameraManager : MonoBehaviour
             print("define a default camera in the inspector");
         }
 
+        _camerasInScene = FindObjectsOfType<Camera>();
+
+        foreach (var cam in _camerasInScene)
+        {
+            cam.enabled = false;
+        }
+
         activeCam = startCam;
 
         SwitchToCam(startCam);
@@ -102,12 +117,20 @@ public class CameraManager : MonoBehaviour
             }
 
             // make sure manager state is 'not transitioning' 
-            isTransitioning = false; 
+            isTransitioning = false;
+
+            OnTransitionEnded?.Invoke(activeCam);
         }
         else
         {
             print("camera to switch to doesn't exist");
         }
+    }
+
+    public void TimedSwitchToCam(Camera cam, float duration)
+    {
+        // this wrapper is for legacy compatibility reasons
+        SwitchToCam(cam, duration);
     }
 
     public void SwitchToCam(Camera cam, float duration)
@@ -126,7 +149,7 @@ public class CameraManager : MonoBehaviour
 
                 // set start transform to transitionCamera's current position 
                 transitionStartTransform = transitionCam.transform;
-
+                OnTransitionEnded?.Invoke(transitionCam);
                 // don't modify previousCam--leave it
             }
             else
@@ -157,7 +180,9 @@ public class CameraManager : MonoBehaviour
 
             // make sure active (target) camera is off 
             activeCam.enabled = false;
-            
+
+            OnTransitionStarted?.Invoke(transitionCam);
+
             StartCoroutine(SwitchingCamRoutine(duration));
         }
         else
@@ -180,7 +205,9 @@ public class CameraManager : MonoBehaviour
 
         isTransitioning = false;
         activeCam.enabled = true;
-        transitionCam.enabled = false; 
+        transitionCam.enabled = false;
+
+        OnTransitionEnded?.Invoke(activeCam);
     }
     #endregion
 
