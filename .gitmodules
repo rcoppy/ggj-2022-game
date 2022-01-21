@@ -1,0 +1,3 @@
+[submodule "ggj-2022-ci-page"]
+	path = ggj-2022-ci-page
+	url = git@github.com:rcoppy/ggj-2022-ci-page.git

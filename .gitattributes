@@ -5,20 +5,15 @@
 #
 # Latest version at https://gist.github.com/webbertakken/ff250a0d5e59a8aae961c2e509c07fbc
 #
-
 # Ensure that text files that any contributor introduces to the repository have their line endings normalized
 * text=auto
-
 # Increase probability of success for merging files with specific extensions
 *.cs diff=csharp
-
 # Macro attribute: Files with Unities yaml format
 # linguist-generated means the file is ignored for the repository's language statistics and diffs are hidden by default.
 [attr]unity-yaml-file -text -merge=unityamlmerge linguist-generated
-
 # Macro attribute: Files intended for LFS
 [attr]lfs-file filter=lfs diff=lfs merge=lfs -text
-
 # Unity files
 *.asmdef unity-yaml-file -linguist-generated
 *.anim unity-yaml-file
@@ -44,25 +39,20 @@
 *.spriteatlas unity-yaml-file
 *.terrainlayer unity-yaml-file
 *.unity unity-yaml-file
-
 # Unity binary files
 *.bundle lfs-file
 *.cubemap lfs-file
 *.unitypackage lfs-file
-
 # Unity specific assets
 *-[Nn]av[Mm]esh.asset lfs-file
 *-[Tt]errain.asset lfs-file
-
 # Creative software
 *.rns lfs-file
 *.reason lfs-file
 *.lxo lfs-file
 *.exr lfs-file
-
 # Documents
 *.pdf lfs-file
-
 # Image formats
 *.afdesign lfs-file
 *.afphoto lfs-file
@@ -79,7 +69,6 @@
 *.tga lfs-file
 *.tiff lfs-file
 *.webp lfs-file
-
 # Audio formats
 *.aif lfs-file
 *.aiff lfs-file
@@ -90,7 +79,6 @@
 *.s3m lfs-file
 *.wav lfs-file
 *.xm lfs-file
-
 # Video formats
 *.mov lfs-file
 *.avi lfs-file
@@ -98,7 +86,6 @@
 *.mpg lfs-file
 *.mpeg lfs-file
 *.mp4 lfs-file
-
 # 3D formats
 *.3ds lfs-file
 *.3dm lfs-file
@@ -116,21 +103,304 @@
 *.ma lfs-file
 *.max lfs-file
 *.mb lfs-file
-
 # Font formats
 *.ttf lfs-file
 *.otf lfs-file
-
 # Bundles and binaries
 *.dll lfs-file
 *.exe lfs-file
 *.mdb lfs-file
 *.pdb lfs-file
 *.so lfs-file
-
 # Packaging
 *.zip lfs-file
 *.7z lfs-file
 *.gz lfs-file
 *.rar lfs-file
 *.tar lfs-file
+game-source/Assets/Plugins/FMOD/platforms/ios.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/linux filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/ios filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/html5.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/linux.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/tvos.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/html5 filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/tvos filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win/src filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/src.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/ios/src filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/src filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/src.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/ios/src.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/html5/src filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/src filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/tvos/lib.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win/src.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/html5/lib.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/ios/lib.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/tvos/lib filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win/lib filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/html5/lib filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/linux/lib filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/linux/src filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/tvos/src filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/tvos/src.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/linux/lib.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/linux/src.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win/lib.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/html5/src.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/ios/lib filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/armeabi-v7a/libresonanceaudio.so.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win/lib/x86/fmodstudioL.dll filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/x64/fmodstudioL.dll.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/html5/lib/2.0.19/libfmodstudioL.a.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win/lib/x86/fmodstudio.dll.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle/Contents/MacOS.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/linux/src/PlatformLinux.cs filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/src/PlatformAndroid.cs filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/html5/lib/2.0.19/libfmodstudio.a.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/ios/lib/libresonanceaudiosimulator.a.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/x86/fmodstudio.dll.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle/Contents/_CodeSignature/CodeResources.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/Contents/MacOS/fmodstudioL.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/ios/lib/libresonanceaudio.a filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win/lib/x86/fmodstudioL.dll.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/ios/lib/libfmodstudiounitypluginsimulator.a filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/tvos/lib/libfmodstudiounitypluginL.a filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/x86/fmodL.dll.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/ios/lib/libfmodstudiounityplugin.a filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/linux/lib/x86_64/libresonanceaudio.so filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/x64/fmodL.dll filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/armeabi-v7a/libfmod.so filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/html5/lib/libfmodstudiounitypluginL.bc.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/x64/fmod.dll.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/ios/src/PlatformIOS.cs.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/tvos/lib/libfmodstudiounitypluginL.a.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/arm/fmod.dll.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win/src/PlatformWindows.cs.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/armeabi-v7a filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/armeabi-v7a/libfmodstudio.so filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/html5/lib/2.0.19/libfmodstudio.a filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle/Contents/_CodeSignature filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/x86.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win/lib/x86_64/resonanceaudio.dll filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/arm64-v8a/libfmodstudio.so filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/fmod.jar.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/linux/lib/x86_64/libfmodstudio.so.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle/Contents/Info.plist.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/x86/libfmodstudio.so.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle/Contents/_CodeSignature/CodeResources.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/tvos/lib/libfmodstudiounitypluginsimulator.a.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/html5/lib/2.0.19/libfmodstudioL.a filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/html5/src/PlatformWebGL.cs filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle/Contents/MacOS filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/arm64-v8a/libfmod.so.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/armeabi-v7a/libfmodL.so.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/x86/libfmodstudio.so filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/linux/lib/x86_64/libfmodstudio.so filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/Contents/Info.plist filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/x86/fmod.dll filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/x86/libresonanceaudio.so filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/html5/lib/libfmodstudiounityplugin.bc filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/armeabi-v7a/libfmodL.so filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/ios/lib/libfmodstudiounitypluginsimulatorL.a.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/src/PlatformMac.cs.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle/Contents filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win/lib/x86_64.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/ios/lib/libfmodstudiounitypluginL.a filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/x86/fmod.dll.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle/Contents/Info.plist filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle/Contents/MacOS/fmodstudio.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/ios/lib/libfmodstudiounitypluginsimulator.a.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle/Contents/MacOS/fmodstudio filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/x86/libfmodstudioL.so filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/Contents/MacOS.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/ios/src/PlatformIOS.cs filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/arm filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win/lib/x86_64/fmodstudio.dll filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/html5/src/PlatformWebGL.cs.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/ios/lib/libfmodstudiounitypluginsimulatorL.a filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/x64/fmodstudio.dll.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/fmod.jar filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle/Contents/_CodeSignature.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/arm/fmodL.dll filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/armeabi-v7a/libfmodstudio.so.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/html5/lib/2.0.19 filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/x64/fmod.dll filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle/Contents filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/arm/fmodstudioL.dll filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win/lib/x86_64 filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/armeabi-v7a/libfmod.so.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/linux/src/PlatformLinux.cs.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/armeabi-v7a.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/x86/libfmod.so filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle/Contents/MacOS filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/x86 filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/arm64-v8a/libfmodstudioL.so filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/html5/lib/libfmodstudiounityplugin.bc.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/ios/lib/libfmodstudiounityplugin.a.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle/Contents/MacOS.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle/Contents.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/tvos/lib/libfmodstudiounityplugin.a.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/armeabi-v7a/libfmodstudioL.so.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/x86/libfmodstudioL.so.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/linux/lib/x86_64 filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/x64 filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/x64.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/arm64-v8a.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/arm.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/x64/fmodstudioL.dll filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/arm64-v8a/libfmod.so filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/html5/lib/libfmodstudiounitypluginL.bc filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/Contents filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle/Contents/MacOS/resonanceaudio.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/tvos/src/PlatformAppleTV.cs filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/Contents/MacOS filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win/src/PlatformWindows.cs filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/arm64-v8a/libfmodstudioL.so.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/x86/libfmodL.so filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/tvos/lib/libfmodstudiounitypluginsimulator.a filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/arm/fmodL.dll.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/x64/fmodL.dll.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win/lib/x86/resonanceaudio.dll.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/arm64-v8a filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/x86/libfmod.so.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle/Contents/_CodeSignature.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win/lib/x86.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win/lib/x86_64/fmodstudio.dll.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle/Contents/Info.plist filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/Contents/_CodeSignature.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/tvos/src/PlatformAppleTV.cs.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/x64/fmodstudio.dll filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/tvos/lib/libfmodstudiounitypluginsimulatorL.a.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/linux/lib/x86_64/libresonanceaudio.so.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle/Contents/MacOS/resonanceaudio filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/x86/fmodL.dll filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/linux/lib/x86_64/libfmodstudioL.so filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/arm/fmodstudio.dll.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/ios/lib/libresonanceaudiosimulator.a filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/arm/fmodstudio.dll filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/arm64-v8a/libresonanceaudio.so filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/x86 filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/html5/lib/2.0.19.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/src/PlatformAndroid.cs.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/x86/fmodstudioL.dll filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win/lib/x86 filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/Contents/MacOS/fmodstudioL filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/Contents/_CodeSignature/CodeResources.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/arm64-v8a/libfmodL.so.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/ios/lib/libresonanceaudio.a.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/Contents/Info.plist.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win/lib/x86/resonanceaudio.dll filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/Contents/_CodeSignature/CodeResources filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/src/PlatformMac.cs filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win/lib/x86_64/resonanceaudio.dll.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/x86/libresonanceaudio.so.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win/lib/x86_64/fmodstudioL.dll filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/arm64-v8a/libfmodstudio.so.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/linux/lib/x86_64.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle/Contents/_CodeSignature/CodeResources filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/x86/fmodstudio.dll filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/tvos/lib/libfmodstudiounityplugin.a filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/linux/lib/x86_64/libfmodstudioL.so.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/Contents/_CodeSignature filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/tvos/lib/libfmodstudiounitypluginsimulatorL.a filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/x86/libfmodL.so.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/Contents.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/ios/lib/libfmodstudiounitypluginL.a.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle/Contents.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/arm/fmod.dll filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/armeabi-v7a/libfmodstudioL.so filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/armeabi-v7a/libresonanceaudio.so filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle/Contents/_CodeSignature filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/arm64-v8a/libfmodL.so filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/x86.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win/lib/x86_64/fmodstudioL.dll.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle/Contents/Info.plist.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/win/lib/x86/fmodstudio.dll filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/x86/fmodstudioL.dll.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle/Contents/_CodeSignature/CodeResources filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/android/lib/arm64-v8a/libresonanceaudio.so.meta filter=lfs diff=lfs merge=lfs -text
+game-source/Assets/Plugins/FMOD/platforms/uwp/lib/arm/fmodstudioL.dll.meta filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/android.meta filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/html5.meta filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/win.meta filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/ios filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/linux filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/tvos filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/tvos.meta filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/uwp filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/android filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/html5 filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/ios.meta filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/mac filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/mac.meta filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/linux.meta filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/uwp.meta filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/win filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/linux/lib/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/mac/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/Contents/MacOS/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/win/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/android/src/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/html5/src/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/linux/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/win/lib/x86/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/win/src/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/tvos/lib/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/tvos/src/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/uwp/lib/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/html5/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/html5/lib/2.0.19/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/Contents/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/uwp/lib/x86/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/android/lib/armeabi-v7a/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/mac/lib/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/android/lib/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/android/lib/arm64-v8a/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/Contents/_CodeSignature/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle/Contents/_CodeSignature/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/win/lib/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/android/lib/x86/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/ios/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/linux/lib/x86_64/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/linux/src/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle/Contents/MacOS/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle/Contents/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle/Contents/MacOS/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/uwp/lib/arm/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/android/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/html5/lib/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/ios/lib/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/tvos/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/uwp/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/uwp/lib/x64/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/win/lib/x86_64/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/ios/src/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle/Contents/_CodeSignature/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/mac/src/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle/ filter=lfs diff=lfs merge=lfs -text
+game-builtin-renderer/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle/Contents/ filter=lfs diff=lfs merge=lfs -text
