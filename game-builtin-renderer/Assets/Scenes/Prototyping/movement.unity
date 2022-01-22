@@ -263,7 +263,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1602520821}
-  _angularLerpFactor: 0.003
+  _lookAheadFactor: 0.67
+  _angularLerpFactor: 0.06
   _safeZoneExtent: {x: 7.17, y: 2.81, z: 7.9}
   _safezoneOffset: {x: 0, y: 0, z: 0}
   _outerZoneExtent: {x: 1.01, y: 1.8, z: 1.34}

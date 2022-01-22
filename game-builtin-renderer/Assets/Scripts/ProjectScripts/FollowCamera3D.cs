@@ -1,13 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq; 
 
 [RequireComponent(typeof(SphereCoords))]
 public class FollowCamera3D : MonoBehaviour
 {
 
     [SerializeField]
-    Transform _target;
+    Transform _target; // used for cartesian tracking
+
+    [SerializeField]
+    float _lookAheadFactor = 0.67f; // multiplier of sphere coords radius
+
+    Vector3 _lookTarget; // used for angular tracking
 
     [SerializeField]
     float _angularLerpFactor = 0.08f; // degrees
@@ -65,7 +71,12 @@ public class FollowCamera3D : MonoBehaviour
 
     Vector3 _lastTargetPosition;
 
-    SphereCoords _sphereCoords; 
+    SphereCoords _sphereCoords;
+
+    // moving average velocity
+    Vector3[] _velocityFrames;
+    int _velFrameId;
+    Vector3 _averageVelocity; 
 
     private void HandleAspectUpdate(float ratio)
     {
@@ -91,8 +102,15 @@ public class FollowCamera3D : MonoBehaviour
     private void Awake()
     {
         _velocity = Vector3.zero;
-        // _angularVelocity = Quaternion.identity;
+        _velocityFrames = new Vector3[30];
+        _velFrameId = 0;
 
+        for (int i = 0; i < _velocityFrames.Length; i++)
+        {
+            _velocityFrames[i] = Vector3.zero; 
+        }
+
+        _lookTarget = _target.position; 
         _lastTargetPosition = _target.position;
         _originPosition = transform.position; 
 
@@ -106,12 +124,28 @@ public class FollowCamera3D : MonoBehaviour
         _sphereCoords = GetComponent<SphereCoords>();
     }
 
+    void UpdateAverageVelocity()
+    {
+        _velFrameId %= _velocityFrames.Length;
+
+        _velocityFrames[_velFrameId] = GetInstantaneousTargetVelocity();
+
+        Vector3 total = Vector3.zero;
+
+        for (int i = 0; i < _velocityFrames.Length; i++)
+        {
+            total += _velocityFrames[i];
+        }
+
+        _averageVelocity = total / _velocityFrames.Length;
+        _velFrameId++; 
+    }
+
 
     // Update is called once per frame
     void Update()
     {
-        //var flattenedPosition = transform.position;
-        //flattenedPosition.z = _target.position.z;
+        UpdateAverageVelocity();
 
         float scaleFactor = GetScalingFromCamera();
 
@@ -141,7 +175,7 @@ public class FollowCamera3D : MonoBehaviour
 
         if (_moving)
         {
-            Vector3 targetVelocity = GetTargetVelocity();
+            Vector3 targetVelocity = _averageVelocity;
             float damping = 1f; 
 
             // if camera is moving opposite the player
@@ -188,23 +222,35 @@ public class FollowCamera3D : MonoBehaviour
 
         transform.position = _originPosition + _sphereCoords.GetRectFromSphere();
 
-        Quaternion temp = transform.rotation;
-        transform.LookAt(_target, Vector3.up);
+        // camera rotation
+        Vector3 lookPos = _target.position;  
 
+        var vel = _averageVelocity;
+        var axis = transform.right;
+
+        var dot = Vector3.Dot(axis, vel);
+
+        if (Mathf.Abs(dot) > 0.6f)
+        {
+            // todo: editor-expose the lookahead distance? 
+            float dist = _lookAheadFactor * _sphereCoords.radius;
+
+            // character move direction
+            float sign = dot < 0f ? -1f : 1f;
+
+            lookPos += sign * dist * axis; 
+        }
+
+        _lookTarget = Vector3.Lerp(_lookTarget, lookPos, 0.07f);
+
+        Quaternion temp = transform.rotation;
+        transform.LookAt(_lookTarget, Vector3.up);
         Quaternion targetRotation = transform.rotation;
-        // transform.rotation = temp;
 
         transform.rotation = Quaternion.Slerp(temp, targetRotation, _angularLerpFactor); 
-
-        // var dif = targetRotation * Quaternion.Inverse(transform.rotation);
-        
-
-
-        
-
     }
 
-    Vector3 GetTargetVelocity()
+    Vector3 GetInstantaneousTargetVelocity()
     {
         return (_target.position - _lastTargetPosition) / Time.deltaTime; 
     }
