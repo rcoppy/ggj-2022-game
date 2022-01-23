@@ -86,6 +86,22 @@ namespace GGJ2022.Dialogue.Schema
             AssetDatabase.Refresh();
         }
 
+        // all folders need to already exist before you can save an asset
+        public static void SaveCharacterBank(CharacterBank asset, string path = "Assets/Cutscenes/")
+        {
+            string strippedName = "Characters";
+            string fullPath = path + strippedName + ".asset";
+
+            string assetPathAndName = AssetDatabase.GenerateUniqueAssetPath(fullPath);
+
+            Debug.Log($"saving cutscene at {assetPathAndName}\n all folders need to exist before you can save an asset");
+
+            AssetDatabase.CreateAsset(asset, assetPathAndName);
+
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+        }
+
         static string ErrorData(string line, Ops type, object handle)
         {
             return type.ToString() + ", " + handle?.ToString() + "\n" + line;
@@ -105,6 +121,7 @@ namespace GGJ2022.Dialogue.Schema
             var lines = script.text.Split('\n');
 
             List<Cutscene> scenes = new List<Cutscene>();
+            HashSet<string> characters = new HashSet<string>();
 
             foreach (string li in lines)
             {
@@ -164,6 +181,7 @@ namespace GGJ2022.Dialogue.Schema
                                 nesting.Push(Ops.Speech);
 
                                 string name = line.Substring(("NAME: ").Length);
+                                characters.Add(name);
 
                                 Speech speech = new Speech(speaker: name);
 
@@ -225,6 +243,19 @@ namespace GGJ2022.Dialogue.Schema
             {
                 SaveCutscene(scene);
             }
+
+            var characterList = new List<Character>();
+
+            foreach (string name in characters)
+            {
+                var c = new Character(name);
+                characterList.Add(c);
+            }
+
+            CharacterBank bank = ScriptableObject.CreateInstance<CharacterBank>();
+            bank.Initialize(characterList);
+
+            SaveCharacterBank(bank);
         }
     }
 }
