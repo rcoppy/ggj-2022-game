@@ -13,6 +13,9 @@ public class FollowCamera3D : MonoBehaviour
     [SerializeField]
     float _lookAheadFactor = 0.67f; // multiplier of sphere coords radius
 
+    [SerializeField]
+    float _lookLerp = 0.007f; 
+
     Vector3 _lookTarget; // used for angular tracking
 
     [SerializeField]
@@ -223,25 +226,27 @@ public class FollowCamera3D : MonoBehaviour
         transform.position = _originPosition + _sphereCoords.GetRectFromSphere();
 
         // camera rotation
-        Vector3 lookPos = _target.position;  
+        Vector3 lookPos = _target.position + _lookAheadFactor * _averageVelocity; 
 
-        var vel = _averageVelocity;
-        var axis = transform.right;
+        // var vel = _averageVelocity;
+        // var axis = transform.right;
 
-        var dot = Vector3.Dot(axis, vel);
+        // var dot = Vector3.Dot(axis, vel);
 
-        if (Mathf.Abs(dot) > 0.6f)
-        {
-            // todo: editor-expose the lookahead distance? 
-            float dist = _lookAheadFactor * _sphereCoords.radius;
+        // if (Mathf.Abs(dot) > 0.6f)
+        //{
+        //    // todo: editor-expose the lookahead distance? 
+        //    float dist = _lookAheadFactor * _sphereCoords.radius;
 
-            // character move direction
-            float sign = dot < 0f ? -1f : 1f;
+        //    // character move direction
+        //    float sign = dot < 0f ? -1f : 1f;
 
-            lookPos += sign * dist * axis; 
-        }
+        //    lookPos += sign * dist * axis; 
+        //}
 
-        _lookTarget = Vector3.Lerp(_lookTarget, lookPos, 0.07f);
+        // lookPos += vel; 
+
+        _lookTarget = Vector3.Lerp(_lookTarget, lookPos, _lookLerp);
 
         Quaternion temp = transform.rotation;
         transform.LookAt(_lookTarget, Vector3.up);
