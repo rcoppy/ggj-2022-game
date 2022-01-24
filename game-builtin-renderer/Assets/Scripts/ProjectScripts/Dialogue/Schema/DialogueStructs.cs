@@ -68,7 +68,7 @@ namespace GGJ2022.Dialogue.Schema
         {
             return Regex.Replace(str, "[^a-zA-Z0-9_.]+", "", RegexOptions.Compiled);
         }
-
+#if UNITY_EDITOR
         public static void SaveCutscene(Cutscene asset, string path="Assets/Cutscenes/")
         {
             string strippedName = RemoveSpecialCharacters(asset.Title);
@@ -257,5 +257,6 @@ namespace GGJ2022.Dialogue.Schema
 
             SaveCharacterBank(bank);
         }
+#endif
     }
 }
