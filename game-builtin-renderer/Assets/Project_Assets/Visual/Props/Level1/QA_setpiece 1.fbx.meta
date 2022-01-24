@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8a25b11157fcd45f69a7b1add9d609a6
+guid: d99172c6c7d8a457085d29f4eba07f67
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 72e097ba56af045c79fe9821fb55ef90, type: 2}
+      name: Material
+    second: {fileID: 2100000, guid: 37333beff1a5745fe9c745ddb0638731, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -80,7 +80,9 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
+  referencedClips:
+  - 790d80dcbb5bb49f5b07fdfde26fd6a1
+  - a5708b4deecf143248e8e30b02e51538
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
