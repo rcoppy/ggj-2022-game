@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorFromLight: 0
   colorMode: 0
-  color: {r: 1, g: 0.9363081, b: 0.7971698, a: 1}
+  color: {r: 1, g: 0.9372549, b: 0.79607844, a: 1}
   colorGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -190,15 +190,15 @@ MonoBehaviour:
   fallOffEndFromLight: 1
   attenuationEquation: 1
   attenuationCustomBlending: 0.5
-  fallOffStart: 0.62
+  fallOffStart: 0.74
   fallOffEnd: 4.0708103
   depthBlendDistance: 2
   cameraClippingDistance: 0.5
-  glareFrontal: 0.5
-  glareBehind: 0.5
-  fresnelPow: 3.7400002
+  glareFrontal: 0.418
+  glareBehind: 0.329
+  fresnelPow: 5.43
   noiseMode: 2
-  noiseIntensity: 0.5
+  noiseIntensity: 0.582
   noiseScaleUseGlobal: 1
   noiseScaleLocal: 0.5
   noiseVelocityUseGlobal: 1
