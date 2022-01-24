@@ -866,6 +866,7 @@ GameObject:
   - component: {fileID: 656548407}
   - component: {fileID: 656548409}
   - component: {fileID: 656548410}
+  - component: {fileID: 656548411}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1131,6 +1132,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
   ListenerNumber: -1
+--- !u!114 &656548411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656548405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
 --- !u!1001 &662834682
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1601,7 +1632,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1069855221, guid: ebe61ff17aa9c437788c546763d64317, type: 3}
   m_PrefabInstance: {fileID: 1069855219}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1741258355}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b5ed9ea75c894ea885f86a294bf7ba5, type: 3}
@@ -2134,7 +2165,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3795088349503850940, guid: ebe61ff17aa9c437788c546763d64317, type: 3}
   m_PrefabInstance: {fileID: 1069855219}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1741258355}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fc2b8c25f2d0472f8b33dd0864d334b, type: 3}
@@ -2523,6 +2554,24 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2.59
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1741258355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3795088349503850937, guid: ebe61ff17aa9c437788c546763d64317, type: 3}
+  m_PrefabInstance: {fileID: 1069855219}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1741258357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741258355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8423a1200eb5e4cd09a45ec43e8cff4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _UIEventPath: event:/SFX/UI_Sound
 --- !u!1001 &1763234069
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,7 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.TextCore;
 using GGJ2022.Dialogue.Schema;
-using TMPro; 
+using TMPro;
+using UnityEngine.Events;
 
 // see these tutorials:
 // https://www.youtube.com/watch?v=mXjRR1nnC5M
@@ -33,8 +34,21 @@ namespace GGJ2022.Dialogue
 
         Queue<Speech> exchanges;
         Queue<Line> dialogueLines; 
-        Speech _activeSpeech; 
+        Speech _activeSpeech;
 
+        public UnityEvent UOnDialogueStarted;
+        public UnityEvent UOnDialogueEnded;
+        public UnityEvent UOnDialogueProgressed;
+
+        public delegate void DialogueStarted(Cutscene cutscene);
+        public delegate void DialogueLineProgressed(Line newLine);
+        public delegate void DialogueSpeechProgressed(Speech newSpeech);
+        public delegate void DialogueEnded();
+
+        public DialogueStarted OnDialogueStarted;
+        public DialogueEnded OnDialogueEnded; 
+        public DialogueLineProgressed OnDialogueLineProgressed;
+        public DialogueSpeechProgressed OnDialogueSpeechProgressed;
 
         public GameObject DialogueCanvas;
 
@@ -49,6 +63,11 @@ namespace GGJ2022.Dialogue
 
         [SerializeField]
         private CharacterBank _characterBank;
+
+        public CharacterBank Characters
+        {
+            get { return _characterBank; }
+        }
 
         private bool isDialogueActive = false;
         // public InputAction continueButton;
@@ -82,6 +101,10 @@ namespace GGJ2022.Dialogue
 
             DialogueCanvas.SetActive(true);
 
+            OnDialogueStarted?.Invoke(cutscene);
+            UOnDialogueStarted?.Invoke();
+
+
             UpdateDialogue(); // step through one line
 
             // PlayerState.instance.FreezeInput();
@@ -95,7 +118,10 @@ namespace GGJ2022.Dialogue
 
                 _textPanel.text = line.Text;
 
-                Debug.Log(line.Text);
+                OnDialogueLineProgressed?.Invoke(line);
+                UOnDialogueProgressed?.Invoke();
+
+                // Debug.Log(line.Text);
             }
             else if (exchanges.Count > 0)
             {
@@ -107,12 +133,17 @@ namespace GGJ2022.Dialogue
                 _namePanel.text = _activeSpeech.Speaker;
                 _portraitPanel.texture = _characterBank.CharacterMap[_activeSpeech.Speaker].Photo;
 
+                OnDialogueSpeechProgressed?.Invoke(_activeSpeech); 
+
                 UpdateDialogue();
             } else { 
 
                 // close the dialogue
                 DialogueCanvas.SetActive(false);
                 isDialogueActive = false;
+
+                OnDialogueEnded?.Invoke();
+                UOnDialogueEnded?.Invoke();
 
                 // assume dialogue was triggered by an interaction; end that interaction
                 //if (Interactable.isInteractionInProgress)

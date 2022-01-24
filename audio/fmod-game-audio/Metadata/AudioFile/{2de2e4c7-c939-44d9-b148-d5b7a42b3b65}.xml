@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{2de2e4c7-c939-44d9-b148-d5b7a42b3b65}">
+		<property name="assetPath">
+			<value>Intro Stem.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>6.7123958333333329</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a8d97cc6-f0f5-4f93-b9d9-f42121348a42}</destination>
+		</relationship>
+	</object>
+</objects>

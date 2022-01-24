@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterList:
   - Name: Alex
-    SoundPath: 
+    SoundPath: event:/SFX/Dialogue_Tyler
     Photo: {fileID: 2800000, guid: a0930dcb482e84c208053cdcd63998d8, type: 3}
   - Name: JASON
-    SoundPath: 
+    SoundPath: event:/SFX/Dialogue_Mason_(Real)
     Photo: {fileID: 2800000, guid: 22b281c01b279446d9e23bf372588ed5, type: 3}
