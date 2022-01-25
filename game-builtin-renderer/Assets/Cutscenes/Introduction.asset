@@ -1,0 +1,191 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2a9460aae1c4420a415466d1db880f, type: 3}
+  m_Name: Introduction
+  m_EditorClassIdentifier: 
+  Title: Introduction
+  Exchanges:
+  - Lines:
+    - Text: Boring. Crude. Unkosher.
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    - Text: "These were just a few of the things said of Claymore Ham\u2019s 1986
+        debut."
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    - Text: Money was lost, careers ruined, and a once full-of-potential arcade franchise
+        was quietly killed off.
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    - Text: "However\u2026"
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    Speaker: Narrator
+    Pre:
+      m_PersistentCalls:
+        m_Calls: []
+    Post:
+      m_PersistentCalls:
+        m_Calls: []
+  - Lines:
+    - Text: Wow, I can really stretch out here..
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    - Text: "I\u2019m pretty sure there\u2019s only like 8 kilobytes of data in there."
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    - Text: Wow! Mr. Punkrock got a new game!
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    - Text: I remember him from the arcade where I made my debut.
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    - Text: Wait, so did The Legend of Imelda!
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    - Text: "\u2026and Quack-man\u2026"
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    Speaker: Claymore Ham
+    Pre:
+      m_PersistentCalls:
+        m_Calls: []
+    Post:
+      m_PersistentCalls:
+        m_Calls: []
+  - Lines:
+    - Text: Woah, I totally forgot you existed!
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    - Text: We made you like 40 years ago!
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    Speaker: Developer 1
+    Pre:
+      m_PersistentCalls:
+        m_Calls: []
+    Post:
+      m_PersistentCalls:
+        m_Calls: []
+  - Lines:
+    - Text: "And I\u2019ve been stuck in here all this time?!"
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    Speaker: Claymore Ham
+    Pre:
+      m_PersistentCalls:
+        m_Calls: []
+    Post:
+      m_PersistentCalls:
+        m_Calls: []
+  - Lines:
+    - Text: Well yeah;
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    - Text: you sold really badly, so you never got a sequel or anything.
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    Speaker: Developer 2
+    Pre:
+      m_PersistentCalls:
+        m_Calls: []
+    Post:
+      m_PersistentCalls:
+        m_Calls: []
+  - Lines:
+    - Text: "Well, I don\u2019t think it\u2019s too late."
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    - Text: "Reboot me, I\u2019m ready for 2022!"
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    Speaker: Claymore Ham
+    Pre:
+      m_PersistentCalls:
+        m_Calls: []
+    Post:
+      m_PersistentCalls:
+        m_Calls: []
+  Pre:
+    m_PersistentCalls:
+      m_Calls: []
+  Post:
+    m_PersistentCalls:
+      m_Calls: []

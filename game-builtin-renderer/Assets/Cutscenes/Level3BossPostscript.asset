@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2a9460aae1c4420a415466d1db880f, type: 3}
+  m_Name: Level3BossPostscript
+  m_EditorClassIdentifier: 
+  Title: Level 3 Boss Post-script
+  Exchanges:
+  - Lines:
+    - Text: "It\u2019s over! Reboot my franchise!"
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    Speaker: Claymore Ham
+    Pre:
+      m_PersistentCalls:
+        m_Calls: []
+    Post:
+      m_PersistentCalls:
+        m_Calls: []
+  - Lines:
+    - Text: "God, fine. You don\u2019t need to kill me over it!"
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    - Text: What was name of your game again?
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    Speaker: Creative Director
+    Pre:
+      m_PersistentCalls:
+        m_Calls: []
+    Post:
+      m_PersistentCalls:
+        m_Calls: []
+  - Lines:
+    - Text: "\u201CThe Pigmy Island Massacre!\u201D"
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    Speaker: Claymore Ham
+    Pre:
+      m_PersistentCalls:
+        m_Calls: []
+    Post:
+      m_PersistentCalls:
+        m_Calls: []
+  - Lines:
+    - Text: "YIKES. That doesn\u2019t age well. I guess we\u2019ll need to figure
+        that out."
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    Speaker: Creative Director
+    Pre:
+      m_PersistentCalls:
+        m_Calls: []
+    Post:
+      m_PersistentCalls:
+        m_Calls: []
+  - Lines:
+    - Text: And you better let me use my new powers, too!
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    Speaker: Claymore Ham
+    Pre:
+      m_PersistentCalls:
+        m_Calls: []
+    Post:
+      m_PersistentCalls:
+        m_Calls: []
+  - Lines:
+    - Text: Fuck.
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    Speaker: Creative Director
+    Pre:
+      m_PersistentCalls:
+        m_Calls: []
+    Post:
+      m_PersistentCalls:
+        m_Calls: []
+  Pre:
+    m_PersistentCalls:
+      m_Calls: []
+  Post:
+    m_PersistentCalls:
+      m_Calls: []

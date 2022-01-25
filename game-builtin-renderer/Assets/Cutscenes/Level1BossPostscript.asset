@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2a9460aae1c4420a415466d1db880f, type: 3}
+  m_Name: Level1BossPostscript
+  m_EditorClassIdentifier: 
+  Title: Level 1 Boss Post-script
+  Exchanges:
+  - Lines:
+    - Text: "You know they\u2019ll never reboot you, right? You don\u2019t belong
+        here anymore!"
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    Speaker: Narrative Designer
+    Pre:
+      m_PersistentCalls:
+        m_Calls: []
+    Post:
+      m_PersistentCalls:
+        m_Calls: []
+  - Lines:
+    - Text: "We\u2019ll see about that."
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    - Text: "If I just get a little more hip to the times, they can\u2019t possibly
+        say no!"
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    Speaker: Claymore Ham
+    Pre:
+      m_PersistentCalls:
+        m_Calls: []
+    Post:
+      m_PersistentCalls:
+        m_Calls: []
+  - Lines:
+    - Text: No one talks like that anymore. Urk.
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    Speaker: Narrative Designer
+    Pre:
+      m_PersistentCalls:
+        m_Calls: []
+    Post:
+      m_PersistentCalls:
+        m_Calls: []
+  - Lines:
+    - Text: "Well, I\u2019ll just take this cool new weapon off of you"
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    - Text: "and then maybe we\u2019ll see who wants to reboot me!"
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    Speaker: Claymore Ham
+    Pre:
+      m_PersistentCalls:
+        m_Calls: []
+    Post:
+      m_PersistentCalls:
+        m_Calls: []
+  Pre:
+    m_PersistentCalls:
+      m_Calls: []
+  Post:
+    m_PersistentCalls:
+      m_Calls: []

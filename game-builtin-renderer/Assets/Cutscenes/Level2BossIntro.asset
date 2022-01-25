@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2a9460aae1c4420a415466d1db880f, type: 3}
+  m_Name: Level2BossIntro
+  m_EditorClassIdentifier: 
+  Title: Level 2 Boss Intro
+  Exchanges:
+  - Lines:
+    - Text: Ugh, what is this melodramatic nonsense?
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    - Text: "Back in my day, game music had style, flair, and like\u2026"
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    - Text: Melodies! What happened to the old composer?!
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    Speaker: Claymore Ham
+    Pre:
+      m_PersistentCalls:
+        m_Calls: []
+    Post:
+      m_PersistentCalls:
+        m_Calls: []
+  - Lines:
+    - Text: "Your game came out like forty years ago, dude. I\u2019d say probably
+        retired?"
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    Speaker: Composer
+    Pre:
+      m_PersistentCalls:
+        m_Calls: []
+    Post:
+      m_PersistentCalls:
+        m_Calls: []
+  - Lines:
+    - Text: Well, I hope you put more effort than this into the sound for MY big
+        return!
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    Speaker: Claymore Ham
+    Pre:
+      m_PersistentCalls:
+        m_Calls: []
+    Post:
+      m_PersistentCalls:
+        m_Calls: []
+  - Lines:
+    - Text: "*Sigh* They don\u2019t pay me enough to deal with this."
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    - Text: Or anything. Ugh.
+      Pre:
+        m_PersistentCalls:
+          m_Calls: []
+      Post:
+        m_PersistentCalls:
+          m_Calls: []
+    Speaker: Composer
+    Pre:
+      m_PersistentCalls:
+        m_Calls: []
+    Post:
+      m_PersistentCalls:
+        m_Calls: []
+  Pre:
+    m_PersistentCalls:
+      m_Calls: []
+  Post:
+    m_PersistentCalls:
+      m_Calls: []
