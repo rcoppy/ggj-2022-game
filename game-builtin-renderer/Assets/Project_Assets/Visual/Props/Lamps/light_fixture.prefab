@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125050989380051991}
-  m_LocalRotation: {x: 0.7071067, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -1.5001284, y: 3.89, z: 1.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -32,7 +32,7 @@ Transform:
   - {fileID: 6658063830028524127}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 89.98, y: 0, z: 0}
 --- !u!1 &6261876108445885043
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,8 +77,8 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 0.9363081, b: 0.7971698, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.9358467, g: 0.79607844, b: 1, a: 1}
+  m_Intensity: 0.75
   m_Range: 4.0708103
   m_SpotAngle: 114.89933
   m_InnerSpotAngle: 21.80208
@@ -110,7 +110,7 @@ Light:
       e33: 1
     m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
+  m_DrawHalo: 1
   m_Flare: {fileID: 0}
   m_RenderMode: 0
   m_CullingMask:
@@ -140,9 +140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b69c542c9a8f4f44a3123e3fa103d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorFromLight: 0
+  colorFromLight: 1
   colorMode: 0
-  color: {r: 1, g: 0.9363081, b: 0.7971698, a: 1}
+  color: {r: 0.9358467, g: 0.79607844, b: 1, a: 1}
   colorGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -174,8 +174,8 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   intensityFromLight: 1
   intensityModeAdvanced: 0
-  intensityInside: 1
-  intensityOutside: 1
+  intensityInside: 0.75
+  intensityOutside: 0.75
   blendingMode: 0
   spotAngleFromLight: 1
   spotAngle: 114.89933
@@ -188,17 +188,17 @@ MonoBehaviour:
   clippingPlaneTransform: {fileID: 0}
   geomCap: 0
   fallOffEndFromLight: 1
-  attenuationEquation: 1
+  attenuationEquation: 2
   attenuationCustomBlending: 0.5
-  fallOffStart: 0.62
+  fallOffStart: 2.45
   fallOffEnd: 4.0708103
   depthBlendDistance: 2
   cameraClippingDistance: 0.5
-  glareFrontal: 0.5
-  glareBehind: 0.5
-  fresnelPow: 3.7400002
-  noiseMode: 2
-  noiseIntensity: 0.5
+  glareFrontal: 0.34
+  glareBehind: 0.27
+  fresnelPow: 7
+  noiseMode: 1
+  noiseIntensity: 0.86
   noiseScaleUseGlobal: 1
   noiseScaleLocal: 0.5
   noiseVelocityUseGlobal: 1
@@ -260,6 +260,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3a0a1b94f9a04493abca6556b6c8c325, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3a0a1b94f9a04493abca6556b6c8c325, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3a0a1b94f9a04493abca6556b6c8c325, type: 3}
+      propertyPath: m_ReceiveShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3a0a1b94f9a04493abca6556b6c8c325, type: 3}

@@ -16,21 +16,31 @@ namespace GGJ2022
 
         [Header("Which transforms activate trigger?")]
         [SerializeField]
-        List<Transform> _triggeringTransforms; 
+        List<Transform> _triggeringTransforms;
+
+        // prevent double trigger (if player object has multiple colliders)
+        int i = 0;
+
+        private void Awake()
+        {
+            i = 0;
+        }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (_triggeringTransforms.Contains(other.transform))
+            if (i == 0 && _triggeringTransforms.Contains(other.transform))
             {
                 OnTriggerActivated?.Invoke();
             }
+            i++;
         }
 
-        private void OnTriggerLeave(Collider other)
+        private void OnTriggerExit(Collider other)
         {
             if (_triggeringTransforms.Contains(other.transform))
             {
                 OnTriggerDeactivated?.Invoke();
+                i = 0; 
             }
         }
     }

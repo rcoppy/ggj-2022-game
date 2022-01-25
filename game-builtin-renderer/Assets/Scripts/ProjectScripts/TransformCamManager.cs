@@ -11,6 +11,11 @@ namespace GGJ2022
         [SerializeField]
         private GameObject _targetTransform;
 
+        public GameObject TargetCamera
+        {
+            get { return _targetTransform; }
+        }
+
         [SerializeField]
         private float _defaultTransitionTime = 0.8f;
 
@@ -189,7 +194,7 @@ namespace GGJ2022
             while (Time.time < timeEnd)
             {
                 float t = 1f - (timeEnd - Time.time) / duration;
-                Debug.Log(t);
+                // Debug.Log(t);
                 _targetTransform.transform.position = Vector3.Lerp(startPos, activeCam.transform.position, t);
                 _targetTransform.transform.rotation = Quaternion.Lerp(startRot, activeCam.transform.rotation, t);
                 yield return null;

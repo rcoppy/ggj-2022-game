@@ -399,7 +399,7 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../audio/fmod-game-audio/fmod-game-audio.fspro
+  sourceProjectPath: ../audio/fmod-game-audio/GGJ2020.fspro
   sourceBankPath: ../audio/fmod-game-audio/Build
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
