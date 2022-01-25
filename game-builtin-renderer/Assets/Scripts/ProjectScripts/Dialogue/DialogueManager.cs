@@ -53,7 +53,12 @@ namespace GGJ2022.Dialogue
         public GameObject DialogueCanvas;
 
         [SerializeField]
-        private TextMeshProUGUI _textPanel;
+        private GGJ2022.Dialogue.TextIterator _textPanel;
+
+        public GGJ2022.Dialogue.TextIterator TextPanel
+        {
+            get { return _textPanel; }
+        }
 
         [SerializeField]
         private TextMeshProUGUI _namePanel;
@@ -88,6 +93,15 @@ namespace GGJ2022.Dialogue
 
         public void StartNewDialogue(Cutscene cutscene)
         {
+            if (isDialogueActive)
+            {
+                isDialogueActive = false;
+
+                _activeCutscene.Post?.Invoke();
+                OnDialogueEnded?.Invoke();
+                UOnDialogueEnded?.Invoke();
+            }
+
             // queue: first-in, first-out
             // first line of dialogue to be added will be first line to be returned
             isDialogueActive = true;
@@ -104,6 +118,7 @@ namespace GGJ2022.Dialogue
             OnDialogueStarted?.Invoke(cutscene);
             UOnDialogueStarted?.Invoke();
 
+            Debug.Log("started new dialogue"); 
 
             UpdateDialogue(); // step through one line
 
@@ -116,7 +131,7 @@ namespace GGJ2022.Dialogue
             {
                 Line line = dialogueLines.Dequeue(); // will return and remove oldest (first added) element
 
-                _textPanel.text = line.Text;
+                _textPanel.TriggerNewText(line.Text);
 
                 OnDialogueLineProgressed?.Invoke(line);
                 UOnDialogueProgressed?.Invoke();
@@ -142,6 +157,7 @@ namespace GGJ2022.Dialogue
                 DialogueCanvas.SetActive(false);
                 isDialogueActive = false;
 
+                _activeCutscene.Post?.Invoke();
                 OnDialogueEnded?.Invoke();
                 UOnDialogueEnded?.Invoke();
 

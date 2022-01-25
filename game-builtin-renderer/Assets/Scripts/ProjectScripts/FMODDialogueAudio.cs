@@ -40,6 +40,7 @@ namespace GGJ2022.Audio
             Dialogue.DialogueManager.instance.OnDialogueEnded += HandleDialogueEnded;
             Dialogue.DialogueManager.instance.OnDialogueSpeechProgressed += HandleSpeechProgressed;
             Dialogue.DialogueManager.instance.OnDialogueLineProgressed += HandleLineProgressed;
+            Dialogue.DialogueManager.instance.TextPanel.OnTextDoneIterating += HandleTextCrawlEnded;
         }
 
         private void OnEnable()
@@ -50,6 +51,7 @@ namespace GGJ2022.Audio
                 Dialogue.DialogueManager.instance.OnDialogueEnded += HandleDialogueEnded;
                 Dialogue.DialogueManager.instance.OnDialogueSpeechProgressed += HandleSpeechProgressed;
                 Dialogue.DialogueManager.instance.OnDialogueLineProgressed += HandleLineProgressed;
+                Dialogue.DialogueManager.instance.TextPanel.OnTextDoneIterating += HandleTextCrawlEnded;
             } catch
             {
                 Debug.LogError("Couldn't find dialogue manager instance");
@@ -64,6 +66,7 @@ namespace GGJ2022.Audio
                 Dialogue.DialogueManager.instance.OnDialogueEnded -= HandleDialogueEnded;
                 Dialogue.DialogueManager.instance.OnDialogueSpeechProgressed -= HandleSpeechProgressed;
                 Dialogue.DialogueManager.instance.OnDialogueLineProgressed -= HandleLineProgressed;
+                Dialogue.DialogueManager.instance.TextPanel.OnTextDoneIterating -= HandleTextCrawlEnded;
             }
             catch
             {
@@ -75,6 +78,14 @@ namespace GGJ2022.Audio
         {
             FMODUnity.RuntimeManager.PlayOneShotAttached(_UIEventPath, _listener);
 
+            try
+            {
+                _speechEvent.setParameterByName("Dialogue End", 0f);
+            }
+            catch
+            {
+                // _speechEvent was unset
+            }
         }
 
         void HandleSpeechProgressed(Speech speech)
@@ -94,6 +105,19 @@ namespace GGJ2022.Audio
             _speechEvent.start(); 
         }
 
+        void HandleTextCrawlEnded()
+        {
+            try
+            {
+                _speechEvent.setParameterByName("Dialogue End", 1f);
+                _speechEvent.release();
+            }
+            catch
+            {
+                // _speechEvent was unset
+            }
+        }
+
         void HandleDialogueStarted(Cutscene cutscene)
         {
             // nothing for now
@@ -104,6 +128,7 @@ namespace GGJ2022.Audio
             try
             {
                 _speechEvent.setParameterByName("Dialogue End", 1f);
+                _speechEvent.release();
             }
             catch
             {

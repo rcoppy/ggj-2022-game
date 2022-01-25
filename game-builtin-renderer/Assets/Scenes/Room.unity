@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 35223898}
   - component: {fileID: 35223900}
   - component: {fileID: 35223899}
+  - component: {fileID: 35223901}
   m_Layer: 5
   m_Name: Speech
   m_TagString: Untagged
@@ -259,6 +260,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 35223897}
   m_CullTransparentMesh: 1
+--- !u!114 &35223901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35223897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a2c081286624f0fa04eea53ec902ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _secondsToWait: 0.02
+  _shouldIterate: 1
 --- !u!1 &48997641
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,6 +812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetCamera: {fileID: 656548408}
+  _baseEulerRotation: {x: 0, y: 0, z: 0}
 --- !u!1001 &608627482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1552,7 +1568,7 @@ PrefabInstance:
     - target: {fileID: 1069855221, guid: ebe61ff17aa9c437788c546763d64317, type: 3}
       propertyPath: _textPanel
       value: 
-      objectReference: {fileID: 35223899}
+      objectReference: {fileID: 35223901}
     - target: {fileID: 1069855221, guid: ebe61ff17aa9c437788c546763d64317, type: 3}
       propertyPath: DialogueCanvas
       value: 
@@ -2831,6 +2847,10 @@ PrefabInstance:
       propertyPath: _targetCamera
       value: 
       objectReference: {fileID: 656548408}
+    - target: {fileID: 9103166160535257688, guid: b6a6f0b71ffb949f19624cdad147e2d6, type: 3}
+      propertyPath: _baseEulerRotation.y
+      value: 180
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6a6f0b71ffb949f19624cdad147e2d6, type: 3}
 --- !u!4 &1773579842 stripped
@@ -3105,7 +3125,7 @@ PrefabInstance:
       objectReference: {fileID: 1773579842}
     - target: {fileID: 5357837514533112057, guid: 50a28f9a026434fc4b4bd3053a2296d5, type: 3}
       propertyPath: OnTriggerDeactivated.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5357837514533112057, guid: 50a28f9a026434fc4b4bd3053a2296d5, type: 3}
       propertyPath: OnTriggerActivated.m_PersistentCalls.m_Calls.Array.data[0].m_Target

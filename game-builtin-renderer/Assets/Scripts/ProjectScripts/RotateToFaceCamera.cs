@@ -7,7 +7,8 @@ public class RotateToFaceCamera : MonoBehaviour
     [SerializeField]
     Transform _targetCamera;
 
-    Quaternion _originalLocalRotation;
+    [SerializeField]
+    Vector3 _baseEulerRotation; 
 
     public Transform TargetCamera
     {
@@ -17,7 +18,7 @@ public class RotateToFaceCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _originalLocalRotation = transform.localRotation;
+        // _originalLocalRotation = transform.localRotation;
     }
 
     // Update is called once per frame
@@ -30,7 +31,12 @@ public class RotateToFaceCamera : MonoBehaviour
 
             //transform.rotation *= rotation
 
-            transform.rotation = Quaternion.LookRotation(_targetCamera.forward, _targetCamera.up);
+            var intermediate = Quaternion.LookRotation(_targetCamera.forward, _targetCamera.up);
+
+            // preserve the up axis
+            var correction = Quaternion.FromToRotation(intermediate * Vector3.up, Vector3.up);
+
+            transform.rotation = Quaternion.Euler(_baseEulerRotation) * correction; 
 
 
             //transform.LookAt(_targetCamera, Vector3.up);
