@@ -12,7 +12,7 @@ namespace GGJ2022.Dialogue
         [SerializeField]
         float _secondsToWait = 0.02f; // 20 milliseconds
 
-        Coroutine _coroutine;
+        IEnumerator _coroutine;
 
         [SerializeField]
         bool _shouldIterate = true;
@@ -21,21 +21,19 @@ namespace GGJ2022.Dialogue
         public TextDoneIterating OnTextDoneIterating;
 
         // Use this for initialization
-        void Start()
+        void Awake()
         {
             _text = GetComponent<TextMeshProUGUI>();
         }
 
         public void TriggerNewText(string text)
         {
-            if (_coroutine != null)
-            {
-                StopCoroutine(_coroutine);
-            }
+            StopAllCoroutines();
 
             if (_shouldIterate)
             {
-                _coroutine = StartCoroutine(IterateLetters(text));
+                _coroutine = IterateLetters(text);
+                StartCoroutine(_coroutine);
             } else
             {
                 _text.text = text; 
@@ -46,14 +44,25 @@ namespace GGJ2022.Dialogue
         {
             _text.text = "";
 
-            foreach (char c in text)
+            for (int i = 0; i < text.Length; i++)
             {
-                _text.text += c; 
-                yield return new WaitForSeconds(_secondsToWait);
+                
+                // webgl error workaround
+                float endTime = Time.time + _secondsToWait;
+
+                while (Time.time < endTime)
+                {
+                    yield return null;
+                }
+
+                _text.text += text[i];
+
+
+                // this throws an index out of bounds error in webgl
+                // yield return new WaitForSeconds(_secondsToWait);
             }
 
             OnTextDoneIterating?.Invoke();
-            yield break;
         }
     }
 }

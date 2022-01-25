@@ -428,7 +428,7 @@ public class dummy_movement : MonoBehaviour
 
                 //if (!s.IsSquishing)
                 //{
-                    s.TriggerSquish(1.6f);
+                    s.TriggerSquish(1.6f, false);
                 //}
             }
         }

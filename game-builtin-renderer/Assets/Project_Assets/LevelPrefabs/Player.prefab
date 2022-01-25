@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 9103166160128490955}
   - component: {fileID: 9103166160128490952}
   - component: {fileID: 9103166160128490953}
-  - component: {fileID: 9103166160128490958}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -205,38 +204,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.32
   m_Center: {x: 0, y: -0.77, z: 0}
---- !u!114 &9103166160128490958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9103166160128490945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: Camera Zone
-  EventReference:
-    Guid:
-      Data1: -844385884
-      Data2: 1188411889
-      Data3: 2100913848
-      Data4: -1182982509
-    Path: event:/Health
-  Event: 
-  PlayEvent: 3
-  StopEvent: 4
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 1
-  Params:
-  - Name: Health
-    Value: 30.3
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1001 &9103166160535257690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -316,6 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetCamera: {fileID: 0}
+  _baseEulerRotation: {x: 0, y: 0, z: 0}
 --- !u!4 &660553645316204168 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8610376085557142738, guid: 68a1b7f138fe3469a8fefdbe3ce58909, type: 3}

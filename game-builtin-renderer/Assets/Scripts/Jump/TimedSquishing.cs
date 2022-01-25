@@ -8,14 +8,18 @@ public class TimedSquishing : MonoBehaviour
     public struct SquishParams
     {
         [SerializeField]
-        public float speed, min, max, duration; 
+        public float speed, min, max, duration;
 
-        public SquishParams(float speed, float min, float max, float duration)
+        [SerializeField]
+        public bool shouldLoop; 
+
+        public SquishParams(float speed, float min, float max, float duration, bool shouldLoop)
         {
             this.speed = speed; 
             this.min = min;
             this.max = max;
             this.duration = duration;
+            this.shouldLoop = shouldLoop; 
         }
     }
 
@@ -24,7 +28,8 @@ public class TimedSquishing : MonoBehaviour
         _squishSpeed = attrs.speed;
         _minSquish = attrs.min;
         _maxSquish = attrs.max;
-        _duration = attrs.duration; 
+        _duration = attrs.duration;
+        _shouldLoop = attrs.shouldLoop;
     } 
 
     public bool IsSquishing
@@ -33,6 +38,7 @@ public class TimedSquishing : MonoBehaviour
     }
 
     bool _isSquishing = false;
+    bool _shouldLoop = false;
 
 
     float _squishStartTime;
@@ -67,7 +73,7 @@ public class TimedSquishing : MonoBehaviour
 
     static float BaseSinusoid(float time, float min, float max, float frequency)
     {
-        return 0.5f * (max - min) * Mathf.Sin(frequency * time) + 0.5f * (max + min);
+        return 0.5f * (max - min) * Mathf.Sin(frequency * time) + 1f; // 0.5f * (max + min);
     }
 
     static float NetSquish(float time, float damping, float duration, float min, float max, float frequency)
@@ -130,7 +136,7 @@ public class TimedSquishing : MonoBehaviour
         OnSquishStarted?.Invoke();
 
 
-        while (Time.time - _squishStartTime < _duration)
+        while (_shouldLoop || Time.time - _squishStartTime < _duration)
         {
             //float decay = -1f * (Time.time - _squishStartTime) / duration + 1f; 
             //float y = _originalScale.y * (_maxSquish * 0.5f * (Mathf.Cos(_squishSpeed * Time.time) + 1f) + _minSquish);
@@ -139,13 +145,23 @@ public class TimedSquishing : MonoBehaviour
             signY = Mathf.Sign(transform.localScale.y);
             signZ = Mathf.Sign(transform.localScale.z);
 
-            float x = NetSquish(Time.time - _squishStartTime + 0.25f * Mathf.PI, _dampFactor, _duration,  1.2f * _minSquish, 0.8f * _maxSquish, _squishSpeed);
+            float x, y, z;
 
-            float y = NetSquish(Time.time - _squishStartTime, _dampFactor, _duration, _minSquish, _maxSquish, _squishSpeed);
+            if (!_shouldLoop)
+            {
+                x = NetSquish(Time.time - _squishStartTime + 0.25f * Mathf.PI, _dampFactor, _duration, 1.2f * _minSquish, 0.8f * _maxSquish, _squishSpeed);
+                z = x;
+                y = NetSquish(Time.time - _squishStartTime, _dampFactor, _duration, _minSquish, _maxSquish, _squishSpeed);
+            } else
+            {
+                x = BaseSinusoid(Time.time - _squishStartTime + 0.25f * Mathf.PI, 1.2f * _minSquish, 0.8f * _maxSquish, _squishSpeed);
+                z = x;
+                y = BaseSinusoid(Time.time - _squishStartTime, _minSquish, _maxSquish, _squishSpeed);
+            }
 
             transform.localScale = new Vector3(signX * x * Mathf.Abs(_originalScale.x),
                                                signY * y * Mathf.Abs(_originalScale.y),
-                                               signZ * Mathf.Abs(_originalScale.z));
+                                               signZ * z * Mathf.Abs(_originalScale.z));
 
             yield return null; 
         }
@@ -178,11 +194,17 @@ public class TimedSquishing : MonoBehaviour
 
     public void TriggerSquish()
     {
-        TriggerSquish(_duration);
+        TriggerSquish(_duration, false);
     }
 
-    public void TriggerSquish(float duration)
+    public void TriggerLoopingSquish()
     {
+        TriggerSquish(_duration, true);
+    }
+
+    public void TriggerSquish(float duration, bool looping)
+    {
+        _shouldLoop = looping; 
         // just extend the current squish if one is already running
         if (_isSquishing)
         {
@@ -192,5 +214,10 @@ public class TimedSquishing : MonoBehaviour
         {
             _squish = StartCoroutine(DoSquish(duration));
         }
+    }
+
+    public void EndLoop()
+    {
+        _shouldLoop = false; 
     }
 }
