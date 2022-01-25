@@ -1,0 +1,254 @@
+BEGIN 
+
+TITLE: Introduction 
+
+NAME: Narrator 
+Boring. Crude. Unkosher. 
+These were just a few of the things said of Claymore Ham’s 1986 debut. 
+Money was lost, careers ruined, and a once full-of-potential arcade franchise was quietly killed off. 
+However… 
+
+/ 
+
+NAME: Claymore Ham 
+Wow, I can really stretch out here.. 
+I’m pretty sure there’s only like 8 kilobytes of data in there. 
+Wow! Mr. Punkrock got a new game! 
+I remember him from the arcade where I made my debut. 
+Wait, so did The Legend of Imelda! 
+…and Quack-man…  
+
+/  
+
+NAME: Developer 1 
+
+Woah, I totally forgot you existed! 
+We made you like 40 years ago! 
+
+/  
+
+NAME: Claymore Ham 
+And I’ve been stuck in here all this time?! 
+
+/  
+
+
+NAME: Developer 2 
+Well yeah; 
+you sold really badly, so you never got a sequel or anything. 
+
+/  
+
+NAME: Claymore Ham 
+Well, I don’t think it’s too late. 
+Reboot me, I’m ready for 2022! 
+
+/  
+/ 
+
+TITLE: Level 1 Boss Post-script 
+
+ 
+NAME: Narrative Designer 
+You know they’ll never reboot you, right? You don’t belong here anymore! 
+
+/  
+
+
+NAME: Claymore Ham 
+We’ll see about that. 
+If I just get a little more hip to the times, they can’t possibly say no! 
+
+/  
+
+
+NAME: Narrative Designer 
+No one talks like that anymore. Urk. 
+
+/  
+
+ 
+
+NAME: Claymore Ham 
+Well, I’ll just take this cool new weapon off of you 
+and then maybe we’ll see who wants to reboot me! 
+
+/  
+
+ 
+
+/ 
+
+ 
+
+TITLE: Level 2 Level Entry 
+
+NAME: Claymore Ham 
+I like the sound of what you’re working on. 
+How about you bring your skills over to my game? 
+
+/  
+
+ 
+NAME: Artist 
+Are… Are you from Angry Birds? Did we make that? 
+I literally have no idea what we do anymore. 
+
+/  
+
+ 
+
+/ 
+
+ 
+
+TITLE: Level 2 Boss Intro 
+
+NAME: Claymore Ham 
+
+
+Ugh, what is this melodramatic nonsense? 
+Back in my day, game music had style, flair, and like… 
+Melodies! What happened to the old composer?! 
+
+/   
+
+ 
+NAME: Composer
+Your game came out like forty years ago, dude. I’d say probably retired?  
+
+/  
+
+ 
+NAME: Claymore Ham
+Well, I hope you put more effort than this into the sound for MY big return! 
+
+/ 
+
+
+NAME: Composer 
+*Sigh* They don’t pay me enough to deal with this. 
+Or anything. Ugh.  
+
+
+/  
+
+
+/ 
+
+ 
+
+TITLE: Level 2 Boss Post-script 
+
+NAME: Composer 
+Ugh… This studio doesn’t have health care…  
+
+/ 
+
+NAME: Claymore Ham 
+I didn’t like his music anyways; not my tempo. 
+I’m feeling more modern anyways! 
+
+/  
+
+
+NAME: Claymore Ham 
+Well, I hope you put more effort than this into the sound for MY big return! 
+
+/  
+
+
+/ 
+
+ 
+
+TITLE: Level 3 Boss Intro 
+
+NAME: Claymore Ham 
+Finally, someone with the ability to do something here! You MADE my game in the first place! 
+
+/ 
+
+NAME: Creative Director 
+Did I? I make a lot of games, you’re going to have to be more specific.  
+
+
+/  
+
+
+NAME: Claymore Ham 
+You don’t remember? 
+It was the most important release of 1986! 
+
+/  
+
+NAME: Creative Director 
+To you, maybe. No one asked us to reboot you. 
+
+/  
+
+ 
+NAME: Claymore Ham 
+Well, I am!  
+
+/  
+
+ 
+NAME: Creative Director 
+Let’s get this over with;
+I have a stand-up at 2pm to determine how unrealistic our horse physics should be. 
+Some of our players want them to be able to scale sheer cliffs. 
+
+/  
+
+
+NAME: Claymore Ham 
+Game development has gotten weird in the last forty years… 
+
+/  
+
+/ 
+
+
+TITLE: Level 3 Boss Post-script 
+
+NAME: Claymore Ham 
+It’s over! Reboot my franchise! 
+
+/ 
+
+NAME: Creative Director 
+God, fine. You don’t need to kill me over it! 
+What was name of your game again? 
+
+/  
+
+ 
+
+NAME: Claymore Ham 
+“The Pigmy Island Massacre!” 
+
+/  
+
+ 
+
+NAME: Creative Director 
+YIKES. That doesn’t age well. I guess we’ll need to figure that out.  
+
+/  
+
+ 
+NAME: Claymore Ham 
+And you better let me use my new powers, too! 
+
+/  
+
+
+NAME: Creative Director 
+Fuck. 
+
+/  
+
+/  
+
+END 
