@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 namespace GGJ2022
 {
@@ -19,7 +20,6 @@ namespace GGJ2022
         Idling,
         Walking,
         Jumping,
-        Running,
         Attacking,
         Hurting,
         Dying,
@@ -86,6 +86,26 @@ namespace GGJ2022
             set { _referenceCamera = value; }
         }
 
+        public void SetIsInputEnabled(bool flag)
+        {
+            _isInputEnabled = flag; 
+        }
+
+
+        [SerializeField]
+        public UnityEvent OnWalkStarted;
+
+        [SerializeField]
+        public UnityEvent OnWalkEnded;
+
+        [SerializeField]
+        public UnityEvent OnJumpStarted;
+
+        [SerializeField]
+        public UnityEvent OnJumpEnded;
+
+        bool _isWalking = false; 
+
         // Start is called before the first frame update
         void Start()
         {
@@ -110,6 +130,12 @@ namespace GGJ2022
 
             if (_isInputEnabled)
             {
+                if (!_isWalking)
+                {
+                    _isWalking = true;
+                    OnWalkStarted?.Invoke(); 
+                }
+
                 _rigidbody.velocity += _forwardAcceleration * Time.fixedDeltaTime * GetMoveDirectionFromInputVector();
             }
 
@@ -134,9 +160,10 @@ namespace GGJ2022
 
             float lateralSpeed = Mathf.Min(velLateral.magnitude, _maxForwardSpeed);
 
-            if (_puppetAnimator != null)
+            if (_rigidbody.velocity.magnitude < 0.03f && _isWalking)
             {
-                _puppetAnimator.SetFloat("walkSpeed", lateralSpeed);
+                OnWalkEnded?.Invoke();
+                _isWalking = false; 
             }
 
             // TODO: sprite flipping
@@ -168,6 +195,9 @@ namespace GGJ2022
             if (_isInputEnabled && IsOnGround)
             {
                 _rigidbody.AddForce(CalculateJumpForce() * Vector3.up);
+
+                OnJumpStarted?.Invoke();
+
                 return true;
             }
             return false; 
@@ -205,6 +235,11 @@ namespace GGJ2022
             {
                 _groundCollider = null; 
                 return false; 
+            }
+
+            if (_groundCollider == null)
+            {
+                OnJumpEnded?.Invoke();
             }
 
             _groundCollider = hits[0];

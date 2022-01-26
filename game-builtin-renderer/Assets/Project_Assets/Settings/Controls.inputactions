@@ -348,8 +348,8 @@
                     "id": "434984c5-fead-4913-96bd-1488503d4b2d",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": "Press",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Interact",
@@ -357,8 +357,8 @@
                     "id": "24de43b4-c5ae-4c39-9ef2-dd239914dab2",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": "Press",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Melee Attack",
@@ -366,8 +366,8 @@
                     "id": "ce0ef0f0-7092-43d6-99bd-a687c29f7206",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": "Press",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [

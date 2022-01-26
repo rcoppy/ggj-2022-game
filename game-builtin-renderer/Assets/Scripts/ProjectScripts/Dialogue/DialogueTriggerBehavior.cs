@@ -14,10 +14,19 @@ namespace GGJ2022.Dialogue
 
         public Cutscene dialogueToTrigger;
 
+        [SerializeField]
+        bool _onlyTriggerOnce = true;
+
+        bool _isTriggered = false;
+
         public void TriggerDialogue()
         {
-            Debug.Log("triggering dialogue");
-            DialogueManager.instance.StartNewDialogue(dialogueToTrigger);
+            if (!_isTriggered)
+            {
+                Debug.Log("triggering dialogue");
+                _isTriggered = true;
+                DialogueManager.instance.StartNewDialogue(dialogueToTrigger);
+            }
         }
     }
 }
