@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c004b09527a344d282e8ffadd8b89be, type: 3}
+  m_Name: PlayerSFXMap
+  m_EditorClassIdentifier: 
+  _keyValues:
+  - Action: Jump
+    FMODEvent:
+      Guid:
+        Data1: 634473394
+        Data2: 1136664740
+        Data3: 691407006
+        Data4: -658222777
+      Path: event:/SFX/Ham_Magic_Jump
+  - Action: Counter
+    FMODEvent:
+      Guid:
+        Data1: -1585703613
+        Data2: 1134163048
+        Data3: 1892558006
+        Data4: 362525064
+      Path: event:/SFX/Ham_Magic_Collision
+  - Action: Melee
+    FMODEvent:
+      Guid:
+        Data1: -914314143
+        Data2: 1322727952
+        Data3: 701301931
+        Data4: 627963785
+      Path: event:/SFX/Ham_Melee_Attack
+  - Action: Ranged
+    FMODEvent:
+      Guid:
+        Data1: -1892735550
+        Data2: 1320767586
+        Data3: -893008474
+        Data4: 2011799977
+      Path: event:/SFX/Ham_Magic_Blast
+  - Action: Smash
+    FMODEvent:
+      Guid:
+        Data1: -1892735550
+        Data2: 1320767586
+        Data3: -893008474
+        Data4: 2011799977
+      Path: event:/SFX/Ham_Magic_Blast
+  - Action: Block
+    FMODEvent:
+      Guid:
+        Data1: -1585703613
+        Data2: 1134163048
+        Data3: 1892558006
+        Data4: 362525064
+      Path: event:/SFX/Ham_Magic_Collision
+  - Action: EndJump
+    FMODEvent:
+      Guid:
+        Data1: -1585703613
+        Data2: 1134163048
+        Data3: 1892558006
+        Data4: 362525064
+      Path: event:/SFX/Ham_Magic_Collision
+  - Action: Footstep
+    FMODEvent:
+      Guid:
+        Data1: -1288397808
+        Data2: 1323206931
+        Data3: 1658494122
+        Data4: -1304225421
+      Path: event:/SFX/Ham_Steps
