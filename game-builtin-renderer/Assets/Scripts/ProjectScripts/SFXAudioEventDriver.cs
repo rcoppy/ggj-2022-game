@@ -41,6 +41,11 @@ namespace GGJ2022
         CharacterAnimationManager _playerAnimationManager;
 
 
+        public static void StaticFireSFXEvent(string action)
+        {
+            Instance.FireSFXEvent(action);
+        }
+
         public void FireSFXEvent(string action)
         {
             if (_sfxDict == null)
