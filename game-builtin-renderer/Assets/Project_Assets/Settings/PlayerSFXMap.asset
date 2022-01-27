@@ -64,11 +64,11 @@ MonoBehaviour:
   - Action: EndJump
     FMODEvent:
       Guid:
-        Data1: -1585703613
-        Data2: 1134163048
-        Data3: 1892558006
-        Data4: 362525064
-      Path: event:/SFX/Ham_Magic_Collision
+        Data1: -1288397808
+        Data2: 1323206931
+        Data3: 1658494122
+        Data4: -1304225421
+      Path: event:/SFX/Ham_Steps
   - Action: Footstep
     FMODEvent:
       Guid:

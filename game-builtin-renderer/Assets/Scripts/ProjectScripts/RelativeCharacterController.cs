@@ -130,13 +130,15 @@ namespace GGJ2022
 
             if (_isInputEnabled)
             {
-                if (!_isWalking)
+                var direction = GetMoveDirectionFromInputVector();
+
+                if (!_isWalking && IsOnGround && direction.magnitude > 0.085f)
                 {
                     _isWalking = true;
                     OnWalkStarted?.Invoke(); 
                 }
 
-                _rigidbody.velocity += _forwardAcceleration * Time.fixedDeltaTime * GetMoveDirectionFromInputVector();
+                _rigidbody.velocity += _forwardAcceleration * Time.fixedDeltaTime * direction;
             }
 
             Vector3 velUp = _rigidbody.velocity.y * Vector3.up;
@@ -156,11 +158,14 @@ namespace GGJ2022
                 _rigidbody.velocity = _maxForwardSpeed * velLateral.normalized + velUp; 
             }
 
-            
 
-            float lateralSpeed = Mathf.Min(velLateral.magnitude, _maxForwardSpeed);
 
-            if (_rigidbody.velocity.magnitude < 0.03f && _isWalking)
+            //float lateralSpeed = Mathf.Min(velLateral.magnitude, _maxForwardSpeed);
+
+            velUp = _rigidbody.velocity.y * Vector3.up;
+            velLateral = _rigidbody.velocity - velUp;
+
+            if (velLateral.magnitude < 0.08f && _isWalking)
             {
                 OnWalkEnded?.Invoke();
                 _isWalking = false; 
@@ -195,6 +200,12 @@ namespace GGJ2022
             if (_isInputEnabled && IsOnGround)
             {
                 _rigidbody.AddForce(CalculateJumpForce() * Vector3.up);
+
+                if (_isWalking)
+                {
+                    _isWalking = false;
+                    OnWalkEnded?.Invoke();
+                }
 
                 OnJumpStarted?.Invoke();
 
