@@ -5,6 +5,7 @@ namespace GGJ2022
 {
     // instead of manipulating a camera directly,
     // wrap it in a transform and move that transform.
+    [RequireComponent(typeof(CameraShaker))]
     public class TransformCamManager : MonoBehaviour
     {
         [Tooltip("transform to manipulate")]
@@ -15,6 +16,9 @@ namespace GGJ2022
         {
             get { return _targetTransform; }
         }
+
+        [SerializeField]
+        bool _useEasing = true; 
 
         [SerializeField]
         private float _defaultTransitionTime = 0.8f;
@@ -35,6 +39,8 @@ namespace GGJ2022
 
         public TransitionStarted OnTransitionStarted;
         public TransitionEnded OnTransitionEnded;
+
+        CameraShaker _cameraShaker; 
 
         #region getters/setters
 
@@ -60,16 +66,20 @@ namespace GGJ2022
             #region singleton
             //Check if instance already exists
             if (instance == null)
+            {
 
                 //if not, set instance to this
                 instance = this;
+            }
 
             //If instance already exists and it's not this:
             else if (instance != this)
+            {
 
                 //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a CameraManager.
                 Destroy(gameObject);
-
+                return;
+            }
             //Sets this to not be destroyed when reloading scene
             DontDestroyOnLoad(gameObject);
             #endregion
@@ -85,17 +95,28 @@ namespace GGJ2022
                 print("define a default camera in the inspector");
             }
 
+            
+
             activeCam = startCam;
 
             SwitchToCam(startCam);
 
+
+
+        }
+
+
+        private void Start()
+        {
+            _cameraShaker = instance.GetComponent<CameraShaker>();
+            _cameraShaker.TargetTransform = _targetTransform.transform;
         }
 
         private void Update()
         {
             // track the target to the active transform
             // (it's possible that the active transform isn't static)
-            if (!isTransitioning)
+            if (!isTransitioning && !_cameraShaker.IsShaking)
             {
                 _targetTransform.transform.SetPositionAndRotation(activeCam.transform.position,
                                                                   activeCam.transform.rotation);
@@ -194,9 +215,15 @@ namespace GGJ2022
             while (Time.time < timeEnd)
             {
                 float t = 1f - (timeEnd - Time.time) / duration;
-                // Debug.Log(t);
-                _targetTransform.transform.position = Vector3.Lerp(startPos, activeCam.transform.position, t);
-                _targetTransform.transform.rotation = Quaternion.Lerp(startRot, activeCam.transform.rotation, t);
+
+                // percentage of half a unit circle rotation
+                float theta = (t + 0.005f) * Mathf.PI;
+
+                // what's the amplitude of the sign curve? (varies 0 to 1)
+                float percent = !_useEasing ? t : Mathf.Clamp(0.5f * (Mathf.Sin(theta - 0.5f * Mathf.PI) + 1f), 0f, 1f);
+
+                _targetTransform.transform.position = Vector3.Lerp(startPos, activeCam.transform.position, percent);
+                _targetTransform.transform.rotation = Quaternion.Lerp(startRot, activeCam.transform.rotation, percent);
                 yield return null;
             }
 
@@ -204,6 +231,12 @@ namespace GGJ2022
 
             OnTransitionEnded?.Invoke(activeCam);
         }
+
+        public void TriggerCameraShake(float duration=0.35f)
+        {
+            _cameraShaker.TriggerCameraShake(duration);
+        }
+
         #endregion
 
     }

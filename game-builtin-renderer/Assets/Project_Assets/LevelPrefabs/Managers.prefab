@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetTransform: {fileID: 0}
+  _useEasing: 1
   _defaultTransitionTime: 1.7
   startCam: {fileID: 0}
 --- !u!114 &1069855221

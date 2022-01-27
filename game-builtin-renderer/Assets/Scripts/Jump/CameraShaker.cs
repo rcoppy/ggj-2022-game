@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Camera))]
+// [RequireComponent(typeof(Camera))]
 public class CameraShaker : MonoBehaviour
 {
 
     bool _isCameraShaking = false;
+
+    public bool IsShaking
+    {
+        get { return _isCameraShaking; }
+    }
 
     [SerializeField]
     float _cameraShakeDuration = 0.35f; // seconds
@@ -21,7 +26,7 @@ public class CameraShaker : MonoBehaviour
 
     float _cameraShakeStartTime;
 
-    float _xOffset, _yOffset;
+    float _xOffset, _yOffset, _zOffset;
     (Phasor[] Phasors, float[] Weights) _shakeData;
 
     public delegate void CameraShakeStarted();
@@ -30,11 +35,17 @@ public class CameraShaker : MonoBehaviour
     public CameraShakeStarted OnCameraShakeStarted;
     public CameraShakeEnded OnCameraShakeEnded;
 
+    Vector3 _originPosition;
+
+    Transform _targetTransform; 
+    public Transform TargetTransform { get { return _targetTransform; } set { _targetTransform = value; } }
+
     // Start is called before the first frame update
     void Start()
     {
         _xOffset = Random.value * _timeScale;
         _yOffset = Random.value * _timeScale;
+        _zOffset = Random.value * _timeScale;
 
         _shakeData = ShakeComponents();
     }
@@ -47,6 +58,7 @@ public class CameraShaker : MonoBehaviour
             if (Time.time - _cameraShakeStartTime > _cameraShakeDuration)
             {
                 _isCameraShaking = false;
+                _targetTransform.position = _originPosition; 
                 OnCameraShakeEnded?.Invoke();
             } else
             {
@@ -54,17 +66,25 @@ public class CameraShaker : MonoBehaviour
                 float t = Time.time * _timeScale;
 
                 float x = _shakeSeverity * SHAKE_SCALE * SummedWeightedOutput(_shakeData.Phasors, _shakeData.Weights, t + _xOffset);
+                float z = _shakeSeverity * SHAKE_SCALE * SummedWeightedOutput(_shakeData.Phasors, _shakeData.Weights, t + _zOffset);
                 float y = _shakeSeverity * SHAKE_SCALE * SummedWeightedOutput(_shakeData.Phasors, _shakeData.Weights, t - _yOffset);
 
-                transform.position += new Vector3(x, y, 0f); 
+                _targetTransform.position += new Vector3(x, y, z); 
             }
         }
+    }
+
+    public void TriggerCameraShake(float duration)
+    {
+        _cameraShakeDuration = duration;
+        TriggerCameraShake();
     }
 
     public void TriggerCameraShake()
     {
         _isCameraShaking = true;
         _cameraShakeStartTime = Time.time;
+        _originPosition = _targetTransform.position; 
 
         OnCameraShakeStarted?.Invoke();
     }

@@ -88,7 +88,10 @@ namespace GGJ2022
 
             _controller.OnWalkStarted.AddListener(HandleWalkStart);
             _controller.OnWalkEnded.AddListener(HandleWalkEnd);
+        }
 
+        private void Start()
+        {
             Dialogue.DialogueManager.instance.OnDialogueStarted += HandleDialogueStart;
             Dialogue.DialogueManager.instance.OnDialogueEnded += HandleDialogueEnd;
         }
