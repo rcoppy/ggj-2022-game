@@ -88,6 +88,9 @@ namespace GGJ2022
 
             _controller.OnWalkStarted.AddListener(HandleWalkStart);
             _controller.OnWalkEnded.AddListener(HandleWalkEnd);
+
+            Dialogue.DialogueManager.instance.OnDialogueStarted += HandleDialogueStart;
+            Dialogue.DialogueManager.instance.OnDialogueEnded += HandleDialogueEnd;
         }
 
         private void OnDisable()
@@ -100,6 +103,9 @@ namespace GGJ2022
 
             _controller.OnWalkStarted.RemoveListener(HandleWalkStart);
             _controller.OnWalkEnded.RemoveListener(HandleWalkEnd);
+
+            Dialogue.DialogueManager.instance.OnDialogueStarted -= HandleDialogueStart;
+            Dialogue.DialogueManager.instance.OnDialogueEnded -= HandleDialogueEnd;
         }
 
         void  HandleWalkStart()
@@ -120,6 +126,16 @@ namespace GGJ2022
         void HandleJumpEnd()
         {
             _animator.SetTrigger("EndJump");
+        }
+
+        void HandleDialogueStart(Dialogue.Schema.Cutscene cutscene)
+        {
+            _controller.SetIsInputEnabled(false);
+        }
+
+        void HandleDialogueEnd()
+        {
+            _controller.SetIsInputEnabled(true);
         }
 
 
