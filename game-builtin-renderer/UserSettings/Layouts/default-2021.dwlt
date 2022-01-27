@@ -23,7 +23,11 @@ MonoBehaviour:
   m_Title: Animation
 =======
   m_Title: Hierarchy
+<<<<<<< HEAD
 >>>>>>> 7ad84cf (Implemented the credits screen / Menu)
+=======
+>>>>>>> 7ad84cf7f0fcba28d8210df03751fa19a2e25da9
+>>>>>>> tb_ui_menus
   m_RootView: {fileID: 13}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -53,7 +57,11 @@ MonoBehaviour:
 =======
   m_MinSize: {x: 101, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
+<<<<<<< HEAD
 >>>>>>> 7ad84cf (Implemented the credits screen / Menu)
+=======
+>>>>>>> 7ad84cf7f0fcba28d8210df03751fa19a2e25da9
+>>>>>>> tb_ui_menus
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -87,7 +95,11 @@ MonoBehaviour:
   controlID: 49
 =======
   controlID: 24422
+<<<<<<< HEAD
 >>>>>>> 7ad84cf (Implemented the credits screen / Menu)
+=======
+>>>>>>> 7ad84cf7f0fcba28d8210df03751fa19a2e25da9
+>>>>>>> tb_ui_menus
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,7 +154,11 @@ MonoBehaviour:
   controlID: 176
 =======
   controlID: 64
+<<<<<<< HEAD
 >>>>>>> 7ad84cf (Implemented the credits screen / Menu)
+=======
+>>>>>>> 7ad84cf7f0fcba28d8210df03751fa19a2e25da9
+>>>>>>> tb_ui_menus
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -250,7 +266,11 @@ MonoBehaviour:
   controlID: 152
 =======
   controlID: 17751
+<<<<<<< HEAD
 >>>>>>> 7ad84cf (Implemented the credits screen / Menu)
+=======
+>>>>>>> 7ad84cf7f0fcba28d8210df03751fa19a2e25da9
+>>>>>>> tb_ui_menus
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -335,7 +355,11 @@ MonoBehaviour:
   controlID: 177
 =======
   controlID: 15720
+<<<<<<< HEAD
 >>>>>>> 7ad84cf (Implemented the credits screen / Menu)
+=======
+>>>>>>> 7ad84cf7f0fcba28d8210df03751fa19a2e25da9
+>>>>>>> tb_ui_menus
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -389,7 +413,11 @@ MonoBehaviour:
   m_LastLoadedLayoutName: 
 =======
   m_LastLoadedLayoutName: UI Animation
+<<<<<<< HEAD
 >>>>>>> 7ad84cf (Implemented the credits screen / Menu)
+=======
+>>>>>>> 7ad84cf7f0fcba28d8210df03751fa19a2e25da9
+>>>>>>> tb_ui_menus
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -445,7 +473,11 @@ MonoBehaviour:
   m_LastSelectedObjectID: -140328
 =======
   m_LastSelectedObjectID: -2350
+<<<<<<< HEAD
 >>>>>>> 7ad84cf (Implemented the credits screen / Menu)
+=======
+>>>>>>> 7ad84cf7f0fcba28d8210df03751fa19a2e25da9
+>>>>>>> tb_ui_menus
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -520,7 +552,11 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+<<<<<<< HEAD
 >>>>>>> 7ad84cf (Implemented the credits screen / Menu)
+=======
+>>>>>>> 7ad84cf7f0fcba28d8210df03751fa19a2e25da9
+>>>>>>> tb_ui_menus
     - e00: 0.48085105
       e01: 0
       e02: 0
@@ -595,7 +631,11 @@ MonoBehaviour:
   m_AnimatorController: {fileID: 9100000, guid: 6a589523c5d1a594c838b852f50cb6a0, type: 2}
   m_BreadCrumbs:
   - m_Target: {fileID: 1615557516763566269, guid: 6a589523c5d1a594c838b852f50cb6a0, type: 2}
+<<<<<<< HEAD
 >>>>>>> 7ad84cf (Implemented the credits screen / Menu)
+=======
+>>>>>>> 7ad84cf7f0fcba28d8210df03751fa19a2e25da9
+>>>>>>> tb_ui_menus
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -737,7 +777,11 @@ MonoBehaviour:
     - Assets/Project_Assets/Visual/UI and Menu
 =======
     - Packages/com.unity.inputsystem/InputSystem/Plugins/UI
+<<<<<<< HEAD
 >>>>>>> 7ad84cf (Implemented the credits screen / Menu)
+=======
+>>>>>>> 7ad84cf7f0fcba28d8210df03751fa19a2e25da9
+>>>>>>> tb_ui_menus
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 0
@@ -755,7 +799,11 @@ MonoBehaviour:
     m_ExpandedIDs: 00000000dc680000de680000146a0000166a0000186a00001a6a00001c6a00001e6a0000206a0000226a0000246a0000266a0000
 =======
     m_ExpandedIDs: 00000000e6690000e8690000
+<<<<<<< HEAD
 >>>>>>> 7ad84cf (Implemented the credits screen / Menu)
+=======
+>>>>>>> 7ad84cf7f0fcba28d8210df03751fa19a2e25da9
+>>>>>>> tb_ui_menus
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -790,7 +838,11 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: c0a0ffff94a1ffffffffffff00000000e6690000e8690000fe690000306a0000886a00009c6a00004a790000e09200002294000038940000ffffff7f
+<<<<<<< HEAD
 >>>>>>> 7ad84cf (Implemented the credits screen / Menu)
+=======
+>>>>>>> 7ad84cf7f0fcba28d8210df03751fa19a2e25da9
+>>>>>>> tb_ui_menus
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: SplashMenuBackground
@@ -885,7 +937,11 @@ MonoBehaviour:
       m_SelectedIDs: d2f6ffff
       m_LastClickedID: -2350
       m_ExpandedIDs: 8832feff06d3ffffd2e1ffffd4e1ffff5cf3ffffd2f6ffff66f9ffffb2f9ffff0cfbffff567600008e7600009a7600000e77000018770000
+<<<<<<< HEAD
 >>>>>>> 7ad84cf (Implemented the credits screen / Menu)
+=======
+>>>>>>> 7ad84cf7f0fcba28d8210df03751fa19a2e25da9
+>>>>>>> tb_ui_menus
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -944,7 +1000,11 @@ MonoBehaviour:
     m_CachedPref: 453
 =======
     m_CachedPref: 192
+<<<<<<< HEAD
 >>>>>>> 7ad84cf (Implemented the credits screen / Menu)
+=======
+>>>>>>> 7ad84cf7f0fcba28d8210df03751fa19a2e25da9
+>>>>>>> tb_ui_menus
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
@@ -1198,7 +1258,11 @@ MonoBehaviour:
     m_Target: {x: 27.345638, y: -16.785505, z: 40}
     speed: 2
     m_Value: {x: 27.345638, y: -16.785505, z: 40}
+<<<<<<< HEAD
 >>>>>>> 7ad84cf (Implemented the credits screen / Menu)
+=======
+>>>>>>> 7ad84cf7f0fcba28d8210df03751fa19a2e25da9
+>>>>>>> tb_ui_menus
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1261,7 +1325,11 @@ MonoBehaviour:
     m_Target: 13.755155
     speed: 2
     m_Value: 13.755155
+<<<<<<< HEAD
 >>>>>>> 7ad84cf (Implemented the credits screen / Menu)
+=======
+>>>>>>> 7ad84cf7f0fcba28d8210df03751fa19a2e25da9
+>>>>>>> tb_ui_menus
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1362,7 +1430,11 @@ MonoBehaviour:
     m_Scale: {x: 1, y: 1}
 =======
     m_Scale: {x: 1.2194334, y: 1.2194334}
+<<<<<<< HEAD
 >>>>>>> 7ad84cf (Implemented the credits screen / Menu)
+=======
+>>>>>>> 7ad84cf7f0fcba28d8210df03751fa19a2e25da9
+>>>>>>> tb_ui_menus
     m_Translation: {x: 683, y: 468.5}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -1380,7 +1452,11 @@ MonoBehaviour:
       y: -384.19482
       width: 1120.1924
       height: 768.38965
+<<<<<<< HEAD
 >>>>>>> 7ad84cf (Implemented the credits screen / Menu)
+=======
+>>>>>>> 7ad84cf7f0fcba28d8210df03751fa19a2e25da9
+>>>>>>> tb_ui_menus
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1366, y: 958}
