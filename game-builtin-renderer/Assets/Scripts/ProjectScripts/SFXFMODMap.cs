@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using FMODUnity;
 using System;
 
 namespace GGJ2022
@@ -20,18 +21,18 @@ namespace GGJ2022
         [SerializeField]
         List<KeyValue> _keyValues;
 
-        Dictionary<string, FMODUnity.EventReference> _sfxMap;
+        Dictionary<string, FMOD.GUID> _sfxMap;
 
-        public Dictionary<string, FMODUnity.EventReference> Map {
+        public Dictionary<string, FMOD.GUID> Map {
             get { return _sfxMap; }
         }
 
         public void RefreshMap()
         {
-            _sfxMap = new Dictionary<string, FMODUnity.EventReference>();
+            _sfxMap = new Dictionary<string, FMOD.GUID>();
 
             foreach (var kvp in _keyValues) {
-                _sfxMap[kvp.Action] = kvp.FMODEvent;
+                _sfxMap[kvp.Action] = kvp.FMODEvent.Guid;
             }
 
         }

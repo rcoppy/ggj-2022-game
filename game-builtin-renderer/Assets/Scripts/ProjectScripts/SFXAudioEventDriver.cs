@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity; 
 
 namespace GGJ2022
 {
@@ -32,7 +33,7 @@ namespace GGJ2022
         SFXFMODMap _sfxMapFile;
 
         [SerializeField]
-        Dictionary<string, FMODUnity.EventReference> _sfxDict; 
+        Dictionary<string, FMOD.GUID> _sfxDict; 
 
         [SerializeField]
         RelativeCharacterController _playerController;
@@ -54,9 +55,9 @@ namespace GGJ2022
                 _sfxDict = _sfxMapFile.Map; 
             }
 
-            FMODUnity.EventReference path = _sfxDict[action];
+            FMOD.GUID guid = _sfxDict[action];
 
-            FMODUnity.RuntimeManager.PlayOneShotAttached(path.Path, _listener);
+            FMODUnity.RuntimeManager.PlayOneShotAttached(guid, _listener);
         }
 
         private void OnEnable()
