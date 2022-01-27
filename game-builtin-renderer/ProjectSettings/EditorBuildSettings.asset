@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Prototyping/movement.unity
     guid: 1af2fdfc21ad44d2aa185ed97c867e53
   - enabled: 1
+    path: Assets/Scenes/SplashScreenTesting.unity
+    guid: e6c7f7edb86f39b4ea546f882fbdcf64
+  - enabled: 1
     path: Assets/Scenes/Room.unity
     guid: c963a0e3fbd7f432080b4b125b245362
   m_configObjects:
