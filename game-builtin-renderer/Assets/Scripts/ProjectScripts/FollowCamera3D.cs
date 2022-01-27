@@ -11,6 +11,9 @@ public class FollowCamera3D : MonoBehaviour
     Transform _target; // used for cartesian tracking
 
     [SerializeField]
+    bool _trackRotationToTarget = true; 
+
+    [SerializeField]
     float _lookAheadFactor = 0.67f; // multiplier of sphere coords radius
 
     [SerializeField]
@@ -73,6 +76,9 @@ public class FollowCamera3D : MonoBehaviour
     //AdaptCameraSizeToAspect _aspectAdapter;
 
     Vector3 _lastTargetPosition;
+
+    [SerializeField]
+    Vector3 _cameraForward = Vector3.zero; 
 
     SphereCoords _sphereCoords;
 
@@ -155,7 +161,9 @@ public class FollowCamera3D : MonoBehaviour
         var outerBounds = new Bounds(_originPosition + scaleFactor * _outerZoneOffset, scaleFactor * _outerZoneExtent);
         var innerBounds = new Bounds(_originPosition + scaleFactor * _safezoneOffset, scaleFactor * _safeZoneExtent);
 
-        if (!_moving && !outerBounds.Contains(_target.transform.position))
+        var playerPos = _target.transform.position + _safezoneOffset;
+
+        if (!_moving && !outerBounds.Contains(playerPos))
         {
             _moving = true;
 
@@ -171,7 +179,8 @@ public class FollowCamera3D : MonoBehaviour
             //var direction = (targetPos - transform.position).normalized;
             //_velocity = direction * _maxSpeed; 
 
-        } else if (_moving && innerBounds.Contains(_target.transform.position))
+        }
+        else if (_moving && innerBounds.Contains(playerPos))
         {
             _moving = false;
         }
@@ -179,22 +188,22 @@ public class FollowCamera3D : MonoBehaviour
         if (_moving)
         {
             Vector3 targetVelocity = _averageVelocity;
-            float damping = 1f; 
+            float damping = 1f;
 
             // if camera is moving opposite the player
             // slow it down
             if (Vector3.Dot(targetVelocity, _velocity) < 0f)
             {
-                damping = 1 / _catchupDampingFactor; 
+                damping = 1 / _catchupDampingFactor;
             }
 
-            Vector3 targetPos = _target.position;
+            Vector3 targetPos = playerPos; // _target.position;
             // targetPos.z = transform.position.z;
 
             var direction = (targetPos - _originPosition).normalized;
             var acceleration = direction * _acceleration;
 
-            _velocity *= damping; 
+            _velocity *= damping;
 
             _velocity += Time.deltaTime * acceleration;
 
@@ -211,7 +220,8 @@ public class FollowCamera3D : MonoBehaviour
             if (_velocity.magnitude > innerBounds.extents.magnitude)
             {
                 _velocity *= 0.3f;
-            } else
+            }
+            else
             {
                 _velocity *= (1f - _friction);
             }
@@ -225,34 +235,37 @@ public class FollowCamera3D : MonoBehaviour
 
         transform.position = _originPosition + _sphereCoords.GetRectFromSphere();
 
-        // camera rotation
-        Vector3 lookPos = _target.position + _lookAheadFactor * _averageVelocity; 
+        if (_trackRotationToTarget)
+        {
+            // camera rotation
+            Vector3 lookPos = _target.position + _lookAheadFactor * _averageVelocity;
 
-        // var vel = _averageVelocity;
-        // var axis = transform.right;
+            // var vel = _averageVelocity;
+            // var axis = transform.right;
 
-        // var dot = Vector3.Dot(axis, vel);
+            // var dot = Vector3.Dot(axis, vel);
 
-        // if (Mathf.Abs(dot) > 0.6f)
-        //{
-        //    // todo: editor-expose the lookahead distance? 
-        //    float dist = _lookAheadFactor * _sphereCoords.radius;
+            // if (Mathf.Abs(dot) > 0.6f)
+            //{
+            //    // todo: editor-expose the lookahead distance? 
+            //    float dist = _lookAheadFactor * _sphereCoords.radius;
 
-        //    // character move direction
-        //    float sign = dot < 0f ? -1f : 1f;
+            //    // character move direction
+            //    float sign = dot < 0f ? -1f : 1f;
 
-        //    lookPos += sign * dist * axis; 
-        //}
+            //    lookPos += sign * dist * axis; 
+            //}
 
-        // lookPos += vel; 
+            // lookPos += vel; 
 
-        _lookTarget = Vector3.Lerp(_lookTarget, lookPos, _lookLerp);
+            _lookTarget = Vector3.Lerp(_lookTarget, lookPos, _lookLerp);
 
-        Quaternion temp = transform.rotation;
-        transform.LookAt(_lookTarget, Vector3.up);
-        Quaternion targetRotation = transform.rotation;
+            Quaternion temp = transform.rotation;
+            transform.LookAt(_lookTarget, Vector3.up);
+            Quaternion targetRotation = transform.rotation;
 
-        transform.rotation = Quaternion.Slerp(temp, targetRotation, _angularLerpFactor); 
+            transform.rotation = Quaternion.Slerp(temp, targetRotation, _angularLerpFactor);
+        }
     }
 
     Vector3 GetInstantaneousTargetVelocity()
