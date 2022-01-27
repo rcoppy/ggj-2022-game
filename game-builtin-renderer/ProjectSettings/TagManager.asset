@@ -40,6 +40,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 380321547
+    locked: 0
+  - name: Woosh
+    uniqueID: 3440384109
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
