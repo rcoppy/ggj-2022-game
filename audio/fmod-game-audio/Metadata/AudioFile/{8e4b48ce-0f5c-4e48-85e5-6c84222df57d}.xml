@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{8e4b48ce-0f5c-4e48-85e5-6c84222df57d}">
+		<property name="assetPath">
+			<value>Script Attack_2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.0422499999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a8d97cc6-f0f5-4f93-b9d9-f42121348a42}</destination>
+		</relationship>
+	</object>
+</objects>

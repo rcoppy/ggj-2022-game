@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{fbfc6481-2680-4b36-9ab2-979e66cbb77e}">
+		<property name="assetPath">
+			<value>Lightning Attack_5.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.63241666666666663</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a8d97cc6-f0f5-4f93-b9d9-f42121348a42}</destination>
+		</relationship>
+	</object>
+</objects>
