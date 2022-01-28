@@ -65,11 +65,11 @@ namespace GGJ2022.EnemyAI
 
         [SerializeField] private float _healthFleeingThreshold = 1f;
 
-        [SerializeField] private float _maxHealth = 5f;
-        public float MaxHealth => _maxHealth;
+        [SerializeField] private int _maxHealth = 5;
+        public int MaxHealth => _maxHealth;
 
-        private float _health;
-        public float Health => _health;
+        private int _health;
+        public int Health => _health;
 
         private bool _isAttackInProgress = false;
 
@@ -224,7 +224,7 @@ namespace GGJ2022.EnemyAI
                                 _destinationPosition = (Vector3) result;
                             }
                         }
-                        else if (CheckIsSightlineObstructed() && !_isMoving)
+                        else if (CheckIsSightlineObstructed())
                         {
                             attempt = ChooseNavigationTarget();
 
@@ -351,7 +351,7 @@ namespace GGJ2022.EnemyAI
                 float eulerDirection = sweepOffset + Random.value * sweepAngle;
                 Vector3 castVector = Quaternion.Euler(0, eulerDirection, 0) * (rayDistance * rightVector);
 
-                if (!Physics.Raycast(_collider.bounds.center, castVector))
+                if (!Physics.Raycast(_collider.bounds.center, castVector, rayDistance))
                 {
                     return transform.position + castVector;
                 }
@@ -566,16 +566,16 @@ namespace GGJ2022.EnemyAI
             }
         }
 
-        public void DoDamage(float damage)
+        public void DoDamage(int damage)
         {
-            _health = Mathf.Max(0f, _health - damage);
+            _health = Math.Max(0, _health - damage);
 
-            if (_health <= 0f)
+            if (_health <= 0)
             {
                 TriggerStateChange(States.Dead);
             }
 
-            _aggroLevel += 4 * damage; 
+            _aggroLevel += 4f * damage; 
         }
     }
 }
