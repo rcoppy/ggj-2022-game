@@ -99,7 +99,7 @@ namespace GGJ2022.EnemyAI
             p.transform.position = attackCenter;
 
             p.parent = gameObject;
-            p.velocity = 20f * -1f * transform.right; 
+            p.velocity = 20f * _controller.GetIntendedSpatialDirection(); 
         }
 
         public void DoDamage(int damage)

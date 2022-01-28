@@ -18,7 +18,9 @@ namespace GGJ2022
         RelativeCharacterController _controller; 
 
         [SerializeField]
-        Animator _animator; 
+        Animator _animator;
+
+        private Rigidbody _rigidbody;
 
         public bool IsActionPlaying
         {
@@ -76,6 +78,7 @@ namespace GGJ2022
         void Awake()
         {
             _controller = GetComponent<RelativeCharacterController>();
+            _rigidbody = GetComponent<Rigidbody>();
         }
 
         private void OnEnable()
@@ -168,6 +171,19 @@ namespace GGJ2022
                 Debug.Log("released input lock");
 
                 OnActionEnded?.Invoke(_currentAction);
+            }
+            
+            // sprite flipping
+            var child = _animator.transform;
+            float raw = Mathf.Abs(child.localScale.x);
+
+            var reference = TransformCamManager.instance.TargetCamera.transform.right;
+            float dot = Vector3.Dot(reference, _controller.GetIntendedSpatialDirection());
+            float sign = Mathf.Sign(dot);
+
+            if (Mathf.Sign(child.localScale.x) != sign && Mathf.Abs(dot) > 0.075f)
+            {
+                child.localScale = new Vector3(sign * raw, child.localScale.y, child.localScale.z);
             }
         }
 
