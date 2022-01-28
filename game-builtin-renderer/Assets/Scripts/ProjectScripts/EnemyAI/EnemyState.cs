@@ -50,7 +50,7 @@ namespace GGJ2022.EnemyAI
 
         private Vector3 _destinationPosition;
 
-        private Transform _attackTarget;
+        [SerializeField] private Transform _attackTarget;
 
         private bool _isPlayerObstructed = false;
 
@@ -83,6 +83,8 @@ namespace GGJ2022.EnemyAI
         public bool IsMoving => _isMoving;
 
         private bool _canMove = true;
+
+        private bool _isLineOfSightObstructed = false; 
 
         // components
         private Collider _collider;
@@ -269,7 +271,7 @@ namespace GGJ2022.EnemyAI
                         }
                     }
                     else if (_state == States.DoingMelee && !_isMoving
-                                                         && GetDistanceToPlayer() < _collider.bounds.size.magnitude)
+                                                         && GetDistanceToPlayer() < 0.4f)
                     {
                         _canMove = false;
                         _isAttackInProgress = true;
@@ -377,10 +379,11 @@ namespace GGJ2022.EnemyAI
             RaycastHit hit;
             if (Physics.Raycast(_collider.bounds.center, castVector, out hit, castVector.magnitude))
             {
-                return hit.collider.transform != _attackTarget;
+                _isLineOfSightObstructed = hit.collider.transform != _attackTarget;
             }
 
-            return false;
+            _isLineOfSightObstructed = false; 
+            return _isLineOfSightObstructed;
         }
 
         Vector3? ChoosePatrolPoint()
@@ -435,6 +438,7 @@ namespace GGJ2022.EnemyAI
                     break;
 
                 case States.Idle:
+                    _destinationPosition = transform.position; 
                     break;
 
                 case States.Patrolling:
@@ -495,7 +499,7 @@ namespace GGJ2022.EnemyAI
             TriggerStateChange(States.DoingMelee);
         }
 
-        void ProcessStatUpdates()
+        void ProcessStatsUpdates()
         {
             _aggroLevel -= _aggroCoolDownRate * Time.deltaTime;
             _aggroLevel = Mathf.Clamp(_aggroLevel, 0f, _maxAggro);
@@ -506,23 +510,26 @@ namespace GGJ2022.EnemyAI
         {
             _health = _maxHealth;
             _collider = GetComponent<Collider>();
+            _rigidbody = GetComponent<Rigidbody>();
             _exclusionMask = ~_layersToExclude;
 
-
+            _destinationPosition = transform.position; 
 
         }
 
         // Update is called once per frame
         void Update()
         {
-            ProcessStatUpdates();
+            ProcessStatsUpdates();
+            
+            ProcessState();
         }
 
         private void FixedUpdate()
         {
             var directionVector = _destinationPosition - transform.position;
             float distanceToDestination = directionVector.magnitude;
-            if (_canMove && distanceToDestination > 0.8f * _collider.bounds.size.magnitude)
+            if (_canMove && distanceToDestination > 0.4f)
             {
                 _isMoving = true;
 
@@ -551,6 +558,11 @@ namespace GGJ2022.EnemyAI
                 var lateral = _rigidbody.velocity - vertical;
 
                 _rigidbody.velocity = 0.85f * lateral + vertical;
+
+                if (_rigidbody.velocity.magnitude < 0.05f)
+                {
+                    _isMoving = false; 
+                }
             }
         }
 
