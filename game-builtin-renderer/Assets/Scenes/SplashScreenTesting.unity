@@ -681,7 +681,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5993,7 +5993,7 @@ GameObject:
   - component: {fileID: 432676301}
   - component: {fileID: 432676303}
   - component: {fileID: 432676302}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6054,8 +6054,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -854583187
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -15651,6 +15651,7 @@ GameObject:
   - component: {fileID: 651382517}
   - component: {fileID: 651382516}
   - component: {fileID: 651382515}
+  - component: {fileID: 651382518}
   m_Layer: 5
   m_Name: CreditsPanel
   m_TagString: Untagged
@@ -15667,7 +15668,7 @@ RectTransform:
   m_GameObject: {fileID: 651382513}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.90283185, y: 0.92471534, z: 1}
+  m_LocalScale: {x: 0.93632686, y: 0.77683294, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2096338668}
@@ -15677,7 +15678,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -39, y: 0}
+  m_AnchoredPosition: {x: 7, y: 154}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &651382515
@@ -15730,6 +15731,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 651382513}
   m_CullTransparentMesh: 1
+--- !u!114 &651382518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651382513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1
 --- !u!1 &713880716
 GameObject:
   m_ObjectHideFlags: 0
@@ -25552,8 +25566,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204980298}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -130}
-  m_LocalScale: {x: 5.043242, y: 4.923893, z: 4.5532}
+  m_LocalPosition: {x: 0, y: 0, z: -130.00006}
+  m_LocalScale: {x: 4.8628306, y: 5.861233, z: 4.5532}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 94432774}
@@ -25563,7 +25577,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 43.197407, y: -901.8991}
+  m_AnchoredPosition: {x: -2.1360073, y: -1271.8306}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1204980300
@@ -25661,6 +25675,18 @@ MonoBehaviour:
       - m_Target: {fileID: 226711710}
         m_TargetAssemblyTypeName: Toggle, Assembly-CSharp
         m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2096338671}
+        m_TargetAssemblyTypeName: AutoScrollingText, Assembly-CSharp
+        m_MethodName: ResetTextPos
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -55310,6 +55336,7 @@ GameObject:
   - component: {fileID: 2096338668}
   - component: {fileID: 2096338670}
   - component: {fileID: 2096338669}
+  - component: {fileID: 2096338671}
   m_Layer: 5
   m_Name: CreditsText
   m_TagString: Untagged
@@ -55326,7 +55353,7 @@ RectTransform:
   m_GameObject: {fileID: 2096338667}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.6484282, y: 3.562088, z: 3.2939174}
+  m_LocalScale: {x: 3.5179133, y: 4.240187, z: 3.2939174}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 651382514}
@@ -55334,7 +55361,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 229.27856, y: 183.84035}
+  m_AnchoredPosition: {x: 175, y: -1350}
   m_SizeDelta: {x: 765, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2096338669
@@ -55357,8 +55384,117 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Contribution \tDeveloper One\nContribution \tDeveloper Two\nContribution
-    \tDeveloper Three\nContribution \tDeveloper Four\nContribution \tDeveloper Five"
+  m_text: 'GAME TITLE
+
+    Conceived and producted in two weeks for Global Game Jam
+    2022.
+
+
+    FEATURING THE TALENTS OF:
+
+
+    Mason Lieberman
+
+    Composer, Audio
+    Director, Narrative Lead
+
+
+    Zoe Marshall
+
+    Narrative Designer
+
+
+    Alex
+    Harder (Hit-Harder)
+
+    Sound Designer
+
+
+    Tyler Gonelli
+
+    Sound Designer
+
+
+    Tucker
+    Burke
+
+    RTVFX, HUD and UI
+
+
+    Paul Barbato
+
+    Character / Concept Artist,
+    Level Designer
+
+
+    Alex Rupp-Coppi
+
+    Producer, Programmer, 3D Modeller /
+    Animator, Technical Artist
+
+
+
+    AND THESE FIRE MUSICIANS:
+
+
+    Zaid Tabani
+
+    Boss
+    Theme - Hype Man
+
+
+    Omega Sparx
+
+    Boss Theme - Lead Rapper
+
+
+    Dom Palombi
+
+    Drums
+
+
+    Joshua
+    Vasquez
+
+    Guitar
+
+
+    Jess Destramp
+
+    Level Theme - Saxophone Ensemble
+
+    Boss
+    Theme - Lead Saxophonist
+
+
+    Carlos Eiene
+
+    Level Theme - Lead Saxophonist
+
+
+    Brian
+    Donohoe
+
+    Boss Theme - Bass
+
+
+    Nico Mendoza
+
+    Level Theme - Bass
+
+
+    Louis
+    Ochoa
+
+    Boss Theme - Bass
+
+
+
+
+
+
+
+    OINK OINK.  ; ]'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5d2cfcf2a30b5db49be9c2f20d92d4e4, type: 2}
   m_sharedMaterial: {fileID: -4552042637094213319, guid: 5d2cfcf2a30b5db49be9c2f20d92d4e4, type: 2}
@@ -55385,15 +55521,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 64.1
-  m_fontSizeBase: 64.1
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -55435,3 +55571,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096338667}
   m_CullTransparentMesh: 1
+--- !u!114 &2096338671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096338667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 104d11ba1f6480943b0cb1571d8896d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: 2
