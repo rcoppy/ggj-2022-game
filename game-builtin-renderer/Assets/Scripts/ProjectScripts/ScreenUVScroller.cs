@@ -53,8 +53,9 @@ namespace GGJ2022
 
                 if (Application.isEditor)
                 {
-                    _rend.sharedMaterial.SetTextureOffset("_MainTex", offset);
-                    _rend.sharedMaterial.SetTextureOffset("_EmissionMap", offset);
+                    // this will corrupt the material between git branches: 
+                    // _rend.sharedMaterial.SetTextureOffset("_MainTex", offset);
+                    // _rend.sharedMaterial.SetTextureOffset("_EmissionMap", offset);
                 } else
                 {
                     _rend.material.SetTextureOffset("_MainTex", offset);
