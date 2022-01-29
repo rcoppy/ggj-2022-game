@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8619608333251484659}
   - component: {fileID: 8619608333251484652}
   - component: {fileID: 8619608333251484653}
+  - component: {fileID: 3552189524491770061}
   m_Layer: 0
   m_Name: RangedEnemy
   m_TagString: Untagged
@@ -151,3 +152,17 @@ MonoBehaviour:
     m_Bits: 8
   _projectile: {fileID: 2209245082943881855, guid: b114f2dffc34649d6b81c20d15b1ae7a, type: 3}
   _attackCooldownTime: 0.8
+  IsAwake: 1
+--- !u!114 &3552189524491770061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8619608333251484654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b0da1f694c44ad890e6e3f49e167bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _props: {fileID: 11400000, guid: ff37106d7b0b940bcb9f89c4618883b8, type: 2}

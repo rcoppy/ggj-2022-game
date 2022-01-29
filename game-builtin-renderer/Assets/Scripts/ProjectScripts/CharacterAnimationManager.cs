@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem; 
 using System.Collections;
+using GGJ2022.EnemyAI;
 
 namespace GGJ2022
 {
@@ -15,7 +16,8 @@ namespace GGJ2022
 
         bool _inputActionLock = false; 
 
-        RelativeCharacterController _controller; 
+        RelativeCharacterController _controller;
+        private PlayerState _playerState; 
 
         [SerializeField]
         Animator _animator;
@@ -77,11 +79,13 @@ namespace GGJ2022
         // Use this for initialization
         void Awake()
         {
+            
             _controller = GetComponent<RelativeCharacterController>();
             _rigidbody = GetComponent<Rigidbody>();
+            _playerState = GetComponent<PlayerState>();
         }
 
-        private void OnEnable()
+        private void Start()
         {
             OnActionStarted += HandleActionStarted;
             OnActionEnded += HandleActionEnded;
@@ -91,10 +95,9 @@ namespace GGJ2022
 
             _controller.OnWalkStarted.AddListener(HandleWalkStart);
             _controller.OnWalkEnded.AddListener(HandleWalkEnd);
-        }
 
-        private void Start()
-        {
+            _playerState.OnDied += HandlePlayerDeath; 
+        
             Dialogue.DialogueManager.instance.OnDialogueStarted += HandleDialogueStart;
             Dialogue.DialogueManager.instance.OnDialogueEnded += HandleDialogueEnd;
         }
@@ -110,8 +113,15 @@ namespace GGJ2022
             _controller.OnWalkStarted.RemoveListener(HandleWalkStart);
             _controller.OnWalkEnded.RemoveListener(HandleWalkEnd);
 
+            _playerState.OnDied -= HandlePlayerDeath; 
+
             Dialogue.DialogueManager.instance.OnDialogueStarted -= HandleDialogueStart;
             Dialogue.DialogueManager.instance.OnDialogueEnded -= HandleDialogueEnd;
+        }
+
+        void HandlePlayerDeath()
+        {
+            TransformCamManager.instance.TriggerCameraShake(0.3f);
         }
 
         void  HandleWalkStart()

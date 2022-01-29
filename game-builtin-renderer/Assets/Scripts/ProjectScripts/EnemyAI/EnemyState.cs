@@ -98,9 +98,10 @@ namespace GGJ2022.EnemyAI
         [SerializeField] private GameObject _projectile;
 
         [SerializeField] private float _attackCooldownTime = 0.8f;
-        private float _lastAttackTime; 
-        
+        private float _lastAttackTime;
 
+        public bool IsAwake = true; 
+        
         // components
         private Collider _collider;
         private Rigidbody _rigidbody;
@@ -146,6 +147,8 @@ namespace GGJ2022.EnemyAI
 
         void ProcessState()
         {
+            if (!IsAwake) return; 
+            
             Vector3? attempt;
             switch (_state)
             {
@@ -421,6 +424,7 @@ namespace GGJ2022.EnemyAI
 
         void TriggerStateChange(States state)
         {
+            if (!IsAwake) return;
             if (_state == state)
             {
                 return;
@@ -522,6 +526,8 @@ namespace GGJ2022.EnemyAI
 
         void ProcessStatsUpdates()
         {
+            if (!IsAwake) return; 
+            
             _aggroLevel -= _aggroCoolDownRate * Time.deltaTime;
             _aggroLevel = Mathf.Clamp(_aggroLevel, 0f, _maxAggro);
 
@@ -556,6 +562,8 @@ namespace GGJ2022.EnemyAI
 
         private void FixedUpdate()
         {
+            if (!IsAwake) return; 
+            
             var directionVector = _destinationPosition - transform.position;
             float distanceToDestination = directionVector.magnitude;
 

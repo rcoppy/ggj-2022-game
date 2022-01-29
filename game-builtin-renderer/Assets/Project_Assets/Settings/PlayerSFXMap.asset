@@ -77,3 +77,51 @@ MonoBehaviour:
         Data3: 1658494122
         Data4: -1304225421
       Path: event:/SFX/Ham_Steps
+  - Action: GenericDamaged
+    FMODEvent:
+      Guid:
+        Data1: 64167938
+        Data2: 1299523421
+        Data3: 450420908
+        Data4: 1710695454
+      Path: event:/SFX/Ham_Got_Hit
+  - Action: EnemyDamaged
+    FMODEvent:
+      Guid:
+        Data1: -2103117851
+        Data2: 1233785069
+        Data3: 706191788
+        Data4: -502860766
+      Path: event:/SFX/Enemy/NPC_Damaged
+  - Action: EnemyDidRangedAttack
+    FMODEvent:
+      Guid:
+        Data1: 957645184
+        Data2: 1211357401
+        Data3: 1715048636
+        Data4: -1720542291
+      Path: event:/SFX/Enemy/Laser
+  - Action: EnemyFleeing
+    FMODEvent:
+      Guid:
+        Data1: -2103117851
+        Data2: 1233785069
+        Data3: 706191788
+        Data4: -502860766
+      Path: event:/SFX/Enemy/NPC_Damaged
+  - Action: EnemyDied
+    FMODEvent:
+      Guid:
+        Data1: -914314143
+        Data2: 1322727952
+        Data3: 701301931
+        Data4: 627963785
+      Path: event:/SFX/Claymore/Ham_Melee_Attack
+  - Action: EnemyDidMeleeAttack
+    FMODEvent:
+      Guid:
+        Data1: 64167938
+        Data2: 1299523421
+        Data3: 450420908
+        Data4: 1710695454
+      Path: event:/SFX/Claymore/Ham_Got_Hit

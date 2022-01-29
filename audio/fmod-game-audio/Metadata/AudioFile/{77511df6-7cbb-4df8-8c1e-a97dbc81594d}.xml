@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{77511df6-7cbb-4df8-8c1e-a97dbc81594d}">
+		<property name="assetPath">
+			<value>Writer Drone Fighters_bip_5.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.20266666666666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a8d97cc6-f0f5-4f93-b9d9-f42121348a42}</destination>
+		</relationship>
+	</object>
+</objects>

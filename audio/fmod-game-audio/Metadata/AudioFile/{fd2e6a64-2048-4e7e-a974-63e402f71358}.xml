@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{fd2e6a64-2048-4e7e-a974-63e402f71358}">
+		<property name="assetPath">
+			<value>Ham_Animator_Projectile_01.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.8131875</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a8d97cc6-f0f5-4f93-b9d9-f42121348a42}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -49,14 +49,14 @@ namespace GGJ2022.EnemyAI
             _controller = GetComponent<RelativeCharacterController>();
         }
 
-        private void OnEnable()
+        private void Start()
         {
             _animationManager.OnActionStarted += HandleInputAction;
         }
 
         private void OnDisable()
         {
-            throw new NotImplementedException();
+            _animationManager.OnActionStarted -= HandleInputAction;
         }
 
         void HandleInputAction(string action)
