@@ -99,7 +99,24 @@ namespace GGJ2022.EnemyAI
             p.transform.position = attackCenter;
 
             p.parent = gameObject;
-            p.velocity = 20f * _controller.GetIntendedSpatialDirection(); 
+            p.velocity = 20f * GetSeekDirection(_controller.GetIntendedSpatialDirection()); 
+        }
+
+        Vector3 GetSeekDirection(Vector3 baseDirection)
+        {
+            float seekRadius = 1.5f; // meters
+
+            var colliders = Physics.SphereCastAll(_boundsCollider.bounds.center, seekRadius, baseDirection, 7f);
+
+            foreach (var c in colliders)
+            {
+                if (c.transform.GetComponent<EnemyState>())
+                {
+                    return (c.transform.position - _boundsCollider.bounds.center).normalized; 
+                }
+            }
+            
+            return baseDirection; 
         }
 
         public void DoDamage(int damage)
