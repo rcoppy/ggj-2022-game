@@ -9,7 +9,9 @@ namespace GGJ2022
         public GameObject parent; 
         public int Damage = 1;
         public Vector3 velocity;
-
+        public Type targetType = typeof(EnemyState);
+        
+        
         private float _maxLifeTime = 5f;
         private float _deathTime;
 
@@ -29,10 +31,15 @@ namespace GGJ2022
 
         private void OnCollisionEnter(Collision collision)
         {
-            var state = collision.gameObject.GetComponent<EnemyState>();
+            var state = collision.gameObject.GetComponent(targetType);
             if (state != null)
             {
-                state.DoDamage(Damage);
+                // ideally player and enemy should share a common interface
+                // but out of time
+                if (targetType == typeof(PlayerState))
+                    ((PlayerState)state).DoDamage(Damage);
+                else if (targetType == typeof(EnemyState))
+                    ((EnemyState)state).DoDamage(Damage);
             }
 
             if (collision.gameObject != parent) Destroy(gameObject);

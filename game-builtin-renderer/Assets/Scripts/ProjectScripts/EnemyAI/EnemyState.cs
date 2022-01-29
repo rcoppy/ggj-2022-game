@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Linq;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using Random = UnityEngine.Random;
 
@@ -65,6 +66,12 @@ namespace GGJ2022.EnemyAI
 
         [SerializeField] private float _healthFleeingThreshold = 1f;
 
+        [SerializeField] private int _meleeDamage = 1;
+        public int MeleeDamage => _meleeDamage;
+        
+        [SerializeField] private int _rangedDamage = 1;
+        public int RangedDamage => _rangedDamage;
+
         [SerializeField] private int _maxHealth = 5;
         public int MaxHealth => _maxHealth;
 
@@ -84,7 +91,15 @@ namespace GGJ2022.EnemyAI
 
         private bool _canMove = true;
 
-        private bool _isLineOfSightObstructed = false; 
+        private bool _isLineOfSightObstructed = false;
+
+        private Rigidbody _attackTargetRigidbody;
+
+        [SerializeField] private GameObject _projectile;
+
+        [SerializeField] private float _attackCooldownTime = 0.8f;
+        private float _lastAttackTime; 
+        
 
         // components
         private Collider _collider;
@@ -257,10 +272,12 @@ namespace GGJ2022.EnemyAI
 
                     if (_state == States.DoingRanged)
                     {
-                        if (CheckIsPlayerInRangedAttackRadius())
+                        if (CheckIsPlayerInRangedAttackRadius() && !_isAttackInProgress)
                         {
                             _canMove = false;
                             _isAttackInProgress = true;
+                            _lastAttackTime = Time.time; 
+                            DoRanged();
                             OnStartedAttacking?.Invoke(_state);
                         }
                         else
@@ -271,15 +288,19 @@ namespace GGJ2022.EnemyAI
                         }
                     }
                     else if (_state == States.DoingMelee && !_isMoving
-                                                         && GetDistanceToPlayer() < 0.4f)
+                                                         && GetDistanceToPlayer() < _collider.bounds.size.magnitude
+                                                         && !_isAttackInProgress)
                     {
                         _canMove = false;
                         _isAttackInProgress = true;
+                        _lastAttackTime = Time.time;
+                        DoMelee();
                         OnStartedAttacking?.Invoke(_state);
                     }
                     else
                     {
                         _canMove = true;
+                        TriggerStateChange(States.Seeking);
                     }
 
                     break;
@@ -458,13 +479,13 @@ namespace GGJ2022.EnemyAI
 
                 case States.DoingMelee:
                 case States.DoingRanged:
-                    if (_isAttackInProgress)
-                    {
-                        break;
-                    }
-
-                    _isAttackInProgress = true;
-                    OnStartedAttacking(_state);
+                    // if (_isAttackInProgress)
+                    // {
+                    //     break;
+                    // }
+                    //
+                    // _isAttackInProgress = true;
+                    // OnStartedAttacking(_state);
                     break;
             }
         }
@@ -481,7 +502,7 @@ namespace GGJ2022.EnemyAI
                 return false;
             }
 
-            if (GetDistanceToPlayer() < _attackRangeRadius)
+            if (GetDistanceToPlayer() < 1.3f * _attackRangeRadius)
             {
                 return true;
             }
@@ -503,6 +524,11 @@ namespace GGJ2022.EnemyAI
         {
             _aggroLevel -= _aggroCoolDownRate * Time.deltaTime;
             _aggroLevel = Mathf.Clamp(_aggroLevel, 0f, _maxAggro);
+
+            if (Time.time > _lastAttackTime + _attackCooldownTime && _isAttackInProgress)
+            {
+                _isAttackInProgress = false; 
+            }
         }
 
         // Use this for initialization
@@ -513,7 +539,10 @@ namespace GGJ2022.EnemyAI
             _rigidbody = GetComponent<Rigidbody>();
             _exclusionMask = ~_layersToExclude;
 
-            _destinationPosition = transform.position; 
+            _destinationPosition = transform.position;
+            _lastAttackTime = Time.time; 
+
+            _attackTargetRigidbody = _attackTarget.GetComponent<Rigidbody>();
 
         }
 
@@ -529,7 +558,13 @@ namespace GGJ2022.EnemyAI
         {
             var directionVector = _destinationPosition - transform.position;
             float distanceToDestination = directionVector.magnitude;
-            if (_canMove && distanceToDestination > 0.4f)
+
+            float distanceBetweenColliders =
+                (_attackTargetRigidbody.ClosestPointOnBounds(_rigidbody.worldCenterOfMass) -
+                 _attackTargetRigidbody.worldCenterOfMass).magnitude
+                + 1.2f * _collider.bounds.extents.magnitude; 
+            
+            if (_canMove && distanceToDestination > distanceBetweenColliders)
             {
                 _isMoving = true;
 
@@ -563,6 +598,18 @@ namespace GGJ2022.EnemyAI
                 {
                     _isMoving = false; 
                 }
+
+                // if reached target and player is there, attack
+                if (_isRangedAttackEnabled && CheckIsPlayerInRangedAttackRadius() && 
+                    _state != States.DoingMelee && _state != States.DoingRanged)
+                {
+                    TriggerStateChange(States.DoingRanged);
+                } else if (_isMeleeAttackEnabled && 
+                           (_attackTargetRigidbody.worldCenterOfMass - _rigidbody.worldCenterOfMass).magnitude < _collider.bounds.size.magnitude 
+                           && _state != States.DoingMelee)
+                {
+                    TriggerStateChange(States.DoingMelee);
+                }
             }
         }
 
@@ -576,6 +623,45 @@ namespace GGJ2022.EnemyAI
             }
 
             _aggroLevel += 4f * damage; 
+        }
+        
+        void DoMelee()
+        {
+            var center = _rigidbody.worldCenterOfMass; 
+            var direction = (_attackTargetRigidbody.worldCenterOfMass - center).normalized;
+
+            var extents = _collider.bounds.extents; 
+            var attackCenter = 1.2f * extents.magnitude * direction + center;
+
+            var colliders = Physics.OverlapBox(attackCenter, 1.4f * extents);
+
+            foreach (var c in colliders)
+            {
+                var state = c.gameObject.GetComponent<PlayerState>();
+
+                if (state == null) continue; 
+                
+                state.DoDamage(_meleeDamage);
+                c.attachedRigidbody.AddForce(200f * (c.bounds.center - center).normalized);
+                break;
+            }
+        }
+
+        void DoRanged()
+        {
+            var center = _rigidbody.worldCenterOfMass; 
+            var direction = (_attackTargetRigidbody.worldCenterOfMass - center).normalized; 
+            var attackCenter = 0.4f * direction + center;
+            var p = Instantiate(_projectile).GetComponent<ProjectileBehaviour>();
+            
+            p.transform.position = attackCenter;
+            p.parent = gameObject;
+            p.targetType = typeof(PlayerState); 
+            
+            // throw off the aim slightly to decrease difficulty 
+            Quaternion error = Quaternion.Inverse(Quaternion.Euler(0f, Random.Range(-10f, 10f), 0f)) * Quaternion.identity;
+            
+            p.velocity = 15f * (error * direction); 
         }
     }
 }

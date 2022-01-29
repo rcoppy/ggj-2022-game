@@ -142,8 +142,12 @@ MonoBehaviour:
   _maxWalkSpeed: 3
   _maxRunSpeed: 5
   _healthFleeingThreshold: 1
+  _meleeDamage: 1
+  _rangedDamage: 1
   _maxHealth: 5
   _deathTimeout: 2
   _layersToExclude:
     serializedVersion: 2
     m_Bits: 8
+  _projectile: {fileID: 2209245082943881855, guid: b114f2dffc34649d6b81c20d15b1ae7a, type: 3}
+  _attackCooldownTime: 0.8

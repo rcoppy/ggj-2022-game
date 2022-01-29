@@ -282,7 +282,7 @@ namespace GGJ2022
             var right = _referenceCamera.transform.right;
             right.y = 0;
 
-            return _lastNonzeroMoveVector.x * right + _lastNonzeroMoveVector.y * forward;
+            return (_lastNonzeroMoveVector.x * right + _lastNonzeroMoveVector.y * forward).normalized;
         }
 
         // map this to controls in player input component

@@ -76,10 +76,10 @@ namespace GGJ2022.EnemyAI
 
         void DoMelee()
         {
-            // todo: make directionally sensitive 
-            var attackCenter = -1f * 0.4f * transform.right + _boundsCollider.bounds.center;
+            var direction = _controller.GetIntendedSpatialDirection(); 
+            var attackCenter = 0.4f * direction + _boundsCollider.bounds.center;
 
-            var colliders = Physics.OverlapBox(attackCenter, _boundsCollider.bounds.extents);
+            var colliders = Physics.OverlapBox(attackCenter, 1.13f * _boundsCollider.bounds.extents);
 
             foreach (var c in colliders)
             {
@@ -94,12 +94,13 @@ namespace GGJ2022.EnemyAI
 
         void DoRanged()
         {
-            var attackCenter = -1f * 0.4f * transform.right + _boundsCollider.bounds.center;
+            var direction = _controller.GetIntendedSpatialDirection(); 
+            var attackCenter = 0.4f * direction + _boundsCollider.bounds.center;
             var p = Instantiate(_projectile).GetComponent<ProjectileBehaviour>();
             p.transform.position = attackCenter;
 
             p.parent = gameObject;
-            p.velocity = 20f * GetSeekDirection(_controller.GetIntendedSpatialDirection()); 
+            p.velocity = 20f * GetSeekDirection(direction); 
         }
 
         Vector3 GetSeekDirection(Vector3 baseDirection)
