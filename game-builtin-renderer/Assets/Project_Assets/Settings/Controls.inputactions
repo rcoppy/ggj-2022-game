@@ -648,7 +648,7 @@
                     "name": "",
                     "id": "b9135ec0-8eff-4e74-b4b6-6a0cc1d77115",
                     "path": "<Keyboard>/escape",
-                    "interactions": "",
+                    "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
