@@ -26,10 +26,10 @@ namespace GGJ2022.EnemyAI
 
         public delegate void GainedALife();
 
-        public Died OnDied;
-        public Damaged OnDamaged;
-        public ResetHealth OnResetHealth;
-        public GainedALife OnGainedALife;
+        public static event Died OnDied;
+        public static event Damaged OnDamaged;
+        public static event ResetHealth OnResetHealth;
+        public static event GainedALife OnGainedALife;
 
         [SerializeField] private int _lives = 3;
         public int Lives => _lives;

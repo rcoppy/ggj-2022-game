@@ -96,7 +96,7 @@ namespace GGJ2022
             _controller.OnWalkStarted.AddListener(HandleWalkStart);
             _controller.OnWalkEnded.AddListener(HandleWalkEnd);
 
-            _playerState.OnDied += HandlePlayerDeath; 
+            GGJ2022.EnemyAI.PlayerState.OnDied += HandlePlayerDeath; 
         
             Dialogue.DialogueManager.instance.OnDialogueStarted += HandleDialogueStart;
             Dialogue.DialogueManager.instance.OnDialogueEnded += HandleDialogueEnd;
@@ -113,7 +113,7 @@ namespace GGJ2022
             _controller.OnWalkStarted.RemoveListener(HandleWalkStart);
             _controller.OnWalkEnded.RemoveListener(HandleWalkEnd);
 
-            _playerState.OnDied -= HandlePlayerDeath; 
+            GGJ2022.EnemyAI.PlayerState.OnDied -= HandlePlayerDeath; 
 
             Dialogue.DialogueManager.instance.OnDialogueStarted -= HandleDialogueStart;
             Dialogue.DialogueManager.instance.OnDialogueEnded -= HandleDialogueEnd;

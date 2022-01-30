@@ -21,3 +21,7 @@ game-builtin-renderer/Assets/Scenes/SplashScreenTesting.unity
 game-builtin-renderer/Assets/Project_Assets/Visual/Props/Level1/Screen.mat
 
 game-builtin-renderer/UserSettings/EditorUserSettings.asset
+
+game-builtin-renderer/Assets/Project_Assets/Visual/HUD/Backdrop.png.meta
+
+game-builtin-renderer/Assets/Project_Assets/Visual/HUD.meta
