@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="197eedfb-26b2-4cce-bef8-10c4cd4b8b21" name="Changes" comment="" />
+    <list default="true" id="f976f6c3-3847-471f-82bc-43c450293ee1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ProjectScripts/LevelStateManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ProjectScripts/LevelStateManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ProjectScripts/MusicManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ProjectScripts/MusicManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.game-builtin-renderer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.game-builtin-renderer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project_Assets/LevelPrefabs/Managers.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project_Assets/LevelPrefabs/Managers.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project_Assets/Settings/PlayerSFXMap.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project_Assets/Settings/PlayerSFXMap.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Room.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SplashScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SplashScreen.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu/SelectThisButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu/SelectThisButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ProjectScripts/FMODDialogueAudio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ProjectScripts/FMODDialogueAudio.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ProjectScripts/SFXAudioEventDriver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ProjectScripts/SFXAudioEventDriver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ProjectScripts/TransformCamManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ProjectScripts/TransformCamManager.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +33,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="24J5Sd9bq3eXaaGNJv7Kyo4U3ZU" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="24OxjLrJEJv78cvjGVYYxTEJoYy" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -65,14 +79,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="197eedfb-26b2-4cce-bef8-10c4cd4b8b21" name="Changes" comment="" />
-      <created>1643335854367</created>
+      <changelist id="f976f6c3-3847-471f-82bc-43c450293ee1" name="Changes" comment="" />
+      <created>1643515623167</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1643335854367</updated>
-      <workItem from="1643335896137" duration="8065000" />
-      <workItem from="1643378347948" duration="14785000" />
-      <workItem from="1643393566161" duration="5662000" />
+      <updated>1643515623167</updated>
+      <workItem from="1643515647448" duration="574000" />
+      <workItem from="1643549886975" duration="6941000" />
     </task>
     <servers />
   </component>

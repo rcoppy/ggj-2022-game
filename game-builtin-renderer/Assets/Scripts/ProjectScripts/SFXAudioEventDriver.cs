@@ -12,15 +12,17 @@ namespace GGJ2022
 
         private void Awake()
         {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(gameObject);
-                return;
-            }
-            else
-            {
+            // if (Instance != null && Instance != this)
+            // {
+            //     Destroy(gameObject);
+            //     return;
+            // }
+            // else
+            // {
+            
+            // need to inherit settings from most recent scene
                 Instance = this;
-            }
+            //}
 
             _sfxMapFile.RefreshMap();
             _sfxDict = _sfxMapFile.Map;
@@ -62,21 +64,31 @@ namespace GGJ2022
 
         private void OnEnable()
         {
-            _playerController.OnJumpStarted.AddListener(() => FireSFXEvent("Jump"));
-            _playerController.OnJumpEnded.AddListener(() => FireSFXEvent("EndJump"));
-
-            _playerAnimationManager.OnActionStarted += FireSFXEvent;
+            try
+            {
+                _playerController.OnJumpStarted.AddListener(() => FireSFXEvent("Jump"));
+                _playerController.OnJumpEnded.AddListener(() => FireSFXEvent("EndJump"));
+                _playerAnimationManager.OnActionStarted += FireSFXEvent;
+            }
+            catch
+            {
+                Debug.LogError("couldn't find player controllers");
+            }
         }
 
         private void OnDisable()
         {
-            _playerController.OnJumpStarted.RemoveAllListeners();
-            _playerController.OnJumpEnded.RemoveAllListeners();
+            try
+            {
+                _playerController.OnJumpStarted.RemoveAllListeners();
+                _playerController.OnJumpEnded.RemoveAllListeners();
 
-            _playerAnimationManager.OnActionStarted -= FireSFXEvent;
-            
-
-
+                _playerAnimationManager.OnActionStarted -= FireSFXEvent;
+            }
+            catch
+            {
+                Debug.LogError("couldn't find player controllers");
+            }
         }
     }
 }
