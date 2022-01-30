@@ -4,12 +4,12 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: UV-Free Legacy Diffuse 1-Texture
   m_Shader: {fileID: 4800000, guid: 5894f1bc35e754b3bbeddf49d56c07b9, type: 3}
-  m_ShaderKeywords: _DETAIL _DETAIL_MULX2 _METALLICGLOSSMAP _NORMALMAP _OCCLUSION
-    _PARALLAXMAP _SPECGLOSSMAP _UVFREE_BUMPED _UVFREE_RIM
+  m_ShaderKeywords: _UVFREE_BUMPED
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -59,6 +59,7 @@ Material:
         m_Texture: {fileID: 2800000, guid: bdd0d3bf2bd6846fbbae064bf416d295, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
@@ -93,3 +94,4 @@ Material:
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []

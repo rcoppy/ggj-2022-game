@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem; 
 using System.Collections;
+using GGJ2022.EnemyAI;
 
 namespace GGJ2022
 {
@@ -15,10 +16,13 @@ namespace GGJ2022
 
         bool _inputActionLock = false; 
 
-        RelativeCharacterController _controller; 
+        RelativeCharacterController _controller;
+        private PlayerState _playerState; 
 
         [SerializeField]
-        Animator _animator; 
+        Animator _animator;
+
+        private Rigidbody _rigidbody;
 
         public bool IsActionPlaying
         {
@@ -75,10 +79,13 @@ namespace GGJ2022
         // Use this for initialization
         void Awake()
         {
+            
             _controller = GetComponent<RelativeCharacterController>();
+            _rigidbody = GetComponent<Rigidbody>();
+            _playerState = GetComponent<PlayerState>();
         }
 
-        private void OnEnable()
+        private void Start()
         {
             OnActionStarted += HandleActionStarted;
             OnActionEnded += HandleActionEnded;
@@ -88,10 +95,9 @@ namespace GGJ2022
 
             _controller.OnWalkStarted.AddListener(HandleWalkStart);
             _controller.OnWalkEnded.AddListener(HandleWalkEnd);
-        }
 
-        private void Start()
-        {
+            _playerState.OnDied += HandlePlayerDeath; 
+        
             Dialogue.DialogueManager.instance.OnDialogueStarted += HandleDialogueStart;
             Dialogue.DialogueManager.instance.OnDialogueEnded += HandleDialogueEnd;
         }
@@ -107,8 +113,15 @@ namespace GGJ2022
             _controller.OnWalkStarted.RemoveListener(HandleWalkStart);
             _controller.OnWalkEnded.RemoveListener(HandleWalkEnd);
 
+            _playerState.OnDied -= HandlePlayerDeath; 
+
             Dialogue.DialogueManager.instance.OnDialogueStarted -= HandleDialogueStart;
             Dialogue.DialogueManager.instance.OnDialogueEnded -= HandleDialogueEnd;
+        }
+
+        void HandlePlayerDeath()
+        {
+            TransformCamManager.instance.TriggerCameraShake(0.3f);
         }
 
         void  HandleWalkStart()
@@ -168,6 +181,19 @@ namespace GGJ2022
                 Debug.Log("released input lock");
 
                 OnActionEnded?.Invoke(_currentAction);
+            }
+            
+            // sprite flipping
+            var child = _animator.transform;
+            float raw = Mathf.Abs(child.localScale.x);
+
+            var reference = TransformCamManager.instance.TargetCamera.transform.right;
+            float dot = Vector3.Dot(reference, _controller.GetIntendedSpatialDirection());
+            float sign = Mathf.Sign(dot);
+
+            if (Mathf.Sign(child.localScale.x) != sign && Mathf.Abs(dot) > 0.075f)
+            {
+                child.localScale = new Vector3(sign * raw, child.localScale.y, child.localScale.z);
             }
         }
 

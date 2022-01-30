@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using GGJ2022;
 using UnityEngine;
 
 public class RotateToFaceCamera : MonoBehaviour
 {
-    [SerializeField]
+    // [SerializeField]
     Transform _targetCamera;
 
     [SerializeField]
@@ -18,7 +19,7 @@ public class RotateToFaceCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // _originalLocalRotation = transform.localRotation;
+        _targetCamera = TransformCamManager.instance.TargetCamera.transform;
     }
 
     // Update is called once per frame
@@ -31,12 +32,12 @@ public class RotateToFaceCamera : MonoBehaviour
 
             //transform.rotation *= rotation
 
-            var intermediate = Quaternion.LookRotation(_targetCamera.forward, _targetCamera.up);
+            var intermediate = Quaternion.LookRotation(-1f * _targetCamera.forward, _targetCamera.up);
 
             // preserve the up axis
             var correction = Quaternion.FromToRotation(intermediate * Vector3.up, Vector3.up);
 
-            transform.rotation = Quaternion.Euler(_baseEulerRotation) * correction; 
+            transform.rotation = correction * intermediate * Quaternion.Euler(_baseEulerRotation);
 
 
             //transform.LookAt(_targetCamera, Vector3.up);

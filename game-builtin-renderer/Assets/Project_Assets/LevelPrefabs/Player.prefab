@@ -2642,6 +2642,7 @@ GameObject:
   - component: {fileID: 9103166160128490952}
   - component: {fileID: 9103166160128490953}
   - component: {fileID: 7286144024930419010}
+  - component: {fileID: 592751444740434494}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2918,6 +2919,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 1141084300760530965}
+--- !u!114 &592751444740434494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9103166160128490945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4af04e30c9464765b3383cf7804132a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectile: {fileID: 2209245082943881855, guid: b114f2dffc34649d6b81c20d15b1ae7a, type: 3}
+  _health: 20
+  _maxHealth: 20
+  _meleeDamage: 1
+  _boundsCollider: {fileID: 9103166160128490949}
 --- !u!1 &9130780398286028512
 GameObject:
   m_ObjectHideFlags: 0

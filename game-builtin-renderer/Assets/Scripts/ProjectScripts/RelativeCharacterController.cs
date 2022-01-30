@@ -74,6 +74,8 @@ namespace GGJ2022
         Animator _puppetAnimator; 
         GameObject _puppet;
 
+        private Vector2 _lastNonzeroMoveVector;
+
         public bool IsOnGround
         {
             get { return _groundCollider != null; }
@@ -183,15 +185,6 @@ namespace GGJ2022
                 OnWalkEnded?.Invoke();
                 _isWalking = false; 
             }
-
-            // TODO: sprite flipping
-            //float raw = Mathf.Abs(child.localScale.x);
-
-            //if (Mathf.Sign(child.localScale.x) != sign && Mathf.Abs(rb.velocity.x) > 0.1f)
-            //{
-            //    child.localScale = new Vector3(sign * raw, child.localScale.y, child.localScale.z);
-            //}
-
         }
 
         public void OnJumpInputReceived(InputAction.CallbackContext context)
@@ -294,6 +287,17 @@ namespace GGJ2022
             return m * (vf - v0) / t_impulse;
         }
 
+        public Vector3 GetIntendedSpatialDirection()
+        {
+            var forward = _referenceCamera.transform.forward;
+            forward.y = 0; 
+            
+            var right = _referenceCamera.transform.right;
+            right.y = 0;
+
+            return (_lastNonzeroMoveVector.x * right + _lastNonzeroMoveVector.y * forward).normalized;
+        }
+
         // map this to controls in player input component
         public void OnMoveInputReceived(InputAction.CallbackContext context)
         {
@@ -305,6 +309,7 @@ namespace GGJ2022
             {
                 _moveInputVector = context.ReadValue<Vector2>();
                 _isLateralInputActive = true;
+                _lastNonzeroMoveVector = _moveInputVector; 
             }
             
         }

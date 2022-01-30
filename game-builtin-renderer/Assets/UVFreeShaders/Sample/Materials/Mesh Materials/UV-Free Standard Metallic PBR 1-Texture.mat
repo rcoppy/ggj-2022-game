@@ -4,11 +4,13 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: UV-Free Standard Metallic PBR 1-Texture
   m_Shader: {fileID: 4800000, guid: b3ac26fce65714bddabaf5a2562d109a, type: 3}
-  m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP _OCCLUSION _PARALLAXMAP
+  m_ShaderKeywords: _GLOSSYREFLECTIONS_OFF _METALLICGLOSSMAP _OCCLUSION _PARALLAXMAP
+    _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -86,6 +88,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _BottomBumpScale: 1
     - _BottomEmissionScaleUI: 0
@@ -130,3 +133,4 @@ Material:
     - _TopColor: {r: 1, g: 1, b: 1, a: 1}
     - _TopEmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _TopEmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
