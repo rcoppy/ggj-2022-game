@@ -1,9 +1,6 @@
-using Cinemachine;
 using UnityEngine;
 using GGJ2022.Audio;
 using GGJ2022.EnemyAI;
-using Unity.VisualScripting;
-using UnityEditor.Profiling.Memory.Experimental;
 
 namespace GGJ2022
 {

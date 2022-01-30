@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f976f6c3-3847-471f-82bc-43c450293ee1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Project_Assets/Settings/Enemy Profiles/ToupeArtist.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project_Assets/Settings/Enemy Profiles/ToupeArtist.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project_Assets/Visual/Characters/ArtistRangedEnemy.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project_Assets/Visual/Characters/ArtistRangedEnemy.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project_Assets/Visual/Characters/RangedEnemy 1.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project_Assets/Visual/Characters/RangedEnemy 1.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project_Assets/Visual/Characters/SegwayMeleeEnemy 1.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project_Assets/Visual/Characters/SegwayMeleeEnemy 1.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project_Assets/Visual/Characters/StaplerMeleeEnemy.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project_Assets/Visual/Characters/StaplerMeleeEnemy.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.game-builtin-renderer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.game-builtin-renderer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project_Assets/Visual/Characters/MeleeEnemy.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project_Assets/Visual/Characters/MeleeEnemy.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project_Assets/Visual/Characters/RangedEnemy.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project_Assets/Visual/Characters/RangedEnemy.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Room.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PauseMenu/PauseGamePlay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PauseMenu/PauseGamePlay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ProjectScripts/EnemyAI/EnemyState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ProjectScripts/EnemyAI/EnemyState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ProjectScripts/LevelStateManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ProjectScripts/LevelStateManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ProjectScripts/MusicManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ProjectScripts/MusicManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1643515623167</updated>
       <workItem from="1643515647448" duration="574000" />
-      <workItem from="1643549886975" duration="9026000" />
+      <workItem from="1643549886975" duration="9613000" />
     </task>
     <servers />
   </component>
