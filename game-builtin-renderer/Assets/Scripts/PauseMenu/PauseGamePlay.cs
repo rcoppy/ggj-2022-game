@@ -12,6 +12,10 @@ public class PauseGamePlay : MonoBehaviour
     [SerializeField]
     GameObject menu;
 
+
+    [SerializeField] private UnityEvent OnPause;
+    [SerializeField] private UnityEvent OnResume; 
+
     private void Start() 
     {
         isPaused = false;
@@ -19,18 +23,22 @@ public class PauseGamePlay : MonoBehaviour
     }
 
     public void TogglePause(InputAction.CallbackContext context)
-    {        
+    {
+        if (!context.performed) return; 
+        
         if(!isPaused)
         {
             isPaused = true;
             Time.timeScale = 0;
             menu.SetActive(true);
+            OnPause?.Invoke();
         }
         else
         {
             isPaused = false;
             Time.timeScale = 1;
             menu.SetActive(false);
+            OnResume?.Invoke();
         }
     }
 }

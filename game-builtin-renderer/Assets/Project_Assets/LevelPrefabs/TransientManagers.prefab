@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: 1069855221}
   - component: {fileID: 1741258357}
   - component: {fileID: 1741258359}
+  - component: {fileID: 7408283048963261992}
+  - component: {fileID: 8887207906897585621}
   m_Layer: 0
-  m_Name: Managers
+  m_Name: TransientManagers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,3 +108,30 @@ MonoBehaviour:
   _sfxMapFile: {fileID: 11400000, guid: 25877029db3fb4bdcac65b8055cef149, type: 2}
   _playerController: {fileID: 0}
   _playerAnimationManager: {fileID: 0}
+--- !u!114 &7408283048963261992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795088349503850937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 475ff3cdacf8747689a6a63a1b56b93f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cameraShakeDuration: 0.35
+  _timeScale: 6
+  _shakeSeverity: 1
+--- !u!114 &8887207906897585621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795088349503850937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b90b9983c59a4bc5b34018022bb822f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -43,20 +43,20 @@ namespace GGJ2022.Audio
             Dialogue.DialogueManager.instance.TextPanel.OnTextDoneIterating += HandleTextCrawlEnded;
         }
 
-        private void OnEnable()
-        {
-            try
-            {
-                Dialogue.DialogueManager.instance.OnDialogueStarted += HandleDialogueStarted;
-                Dialogue.DialogueManager.instance.OnDialogueEnded += HandleDialogueEnded;
-                Dialogue.DialogueManager.instance.OnDialogueSpeechProgressed += HandleSpeechProgressed;
-                Dialogue.DialogueManager.instance.OnDialogueLineProgressed += HandleLineProgressed;
-                Dialogue.DialogueManager.instance.TextPanel.OnTextDoneIterating += HandleTextCrawlEnded;
-            } catch
-            {
-                Debug.LogError("Couldn't find dialogue manager instance");
-            }
-        }
+        // private void OnEnable()
+        // {
+        //     try
+        //     {
+        //         Dialogue.DialogueManager.instance.OnDialogueStarted += HandleDialogueStarted;
+        //         Dialogue.DialogueManager.instance.OnDialogueEnded += HandleDialogueEnded;
+        //         Dialogue.DialogueManager.instance.OnDialogueSpeechProgressed += HandleSpeechProgressed;
+        //         Dialogue.DialogueManager.instance.OnDialogueLineProgressed += HandleLineProgressed;
+        //         Dialogue.DialogueManager.instance.TextPanel.OnTextDoneIterating += HandleTextCrawlEnded;
+        //     } catch
+        //     {
+        //         Debug.LogError("Couldn't find dialogue manager instance");
+        //     }
+        // }
 
         private void OnDisable()
         {

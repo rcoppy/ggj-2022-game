@@ -125,3 +125,11 @@ MonoBehaviour:
         Data3: 450420908
         Data4: 1710695454
       Path: event:/SFX/Claymore/Ham_Got_Hit
+  - Action: UiInteraction
+    FMODEvent:
+      Guid:
+        Data1: 1115411401
+        Data2: 1252944858
+        Data3: 1706318984
+        Data4: -192300040
+      Path: event:/SFX/GeneralFX/UI_Sound
