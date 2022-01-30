@@ -93,6 +93,19 @@ namespace GGJ2022
             _isInputEnabled = flag; 
         }
 
+        // Added a toggle version for single pause/unpause event call
+        public void ToggleIsInputEnabled()
+        {
+            if(!_isInputEnabled)
+            {
+                _isInputEnabled = true;
+            }
+            else
+            {
+                _isInputEnabled = false;
+            }
+        }
+
 
         [SerializeField]
         public UnityEvent OnWalkStarted;
