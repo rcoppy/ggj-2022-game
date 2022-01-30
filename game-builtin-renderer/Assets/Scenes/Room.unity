@@ -3011,6 +3011,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 259290861327894914, guid: b6a6f0b71ffb949f19624cdad147e2d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547160031782109371, guid: b6a6f0b71ffb949f19624cdad147e2d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735484649584044561, guid: b6a6f0b71ffb949f19624cdad147e2d6, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735484649584044561, guid: b6a6f0b71ffb949f19624cdad147e2d6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4f622717845804dd3a905f5029204e9a, type: 2}
+    - target: {fileID: 4735484649584044561, guid: b6a6f0b71ffb949f19624cdad147e2d6, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: d0a066c89ca575b4687933cb8a66a54c, type: 2}
+    - target: {fileID: 5676188513259979010, guid: b6a6f0b71ffb949f19624cdad147e2d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254344205636678338, guid: b6a6f0b71ffb949f19624cdad147e2d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9103166160128490945, guid: b6a6f0b71ffb949f19624cdad147e2d6, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3101,6 +3129,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8567b4294936462785d6a7b87daaa3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1773579844 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8961237649945808050, guid: b6a6f0b71ffb949f19624cdad147e2d6, type: 3}
+  m_PrefabInstance: {fileID: 1773579841}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1773579845 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9103166160128490952, guid: b6a6f0b71ffb949f19624cdad147e2d6, type: 3}
@@ -3123,6 +3156,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4af04e30c9464765b3383cf7804132a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1773579847 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 259290861327894914, guid: b6a6f0b71ffb949f19624cdad147e2d6, type: 3}
+  m_PrefabInstance: {fileID: 1773579841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1773579848 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5944178293863287465, guid: b6a6f0b71ffb949f19624cdad147e2d6, type: 3}
+  m_PrefabInstance: {fileID: 1773579841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1773579849 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8030129847496839912, guid: b6a6f0b71ffb949f19624cdad147e2d6, type: 3}
+  m_PrefabInstance: {fileID: 1773579841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1773579850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8703525926250793262, guid: b6a6f0b71ffb949f19624cdad147e2d6, type: 3}
+  m_PrefabInstance: {fileID: 1773579841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1773579851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6254344205636678338, guid: b6a6f0b71ffb949f19624cdad147e2d6, type: 3}
+  m_PrefabInstance: {fileID: 1773579841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1773579852 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5944204330005872853, guid: b6a6f0b71ffb949f19624cdad147e2d6, type: 3}
+  m_PrefabInstance: {fileID: 1773579841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1773579853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773579852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95454ddf72f714d48a491a41ea8f63e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyParts:
+  - {fileID: 1773579851}
+  - {fileID: 1773579850}
+  - {fileID: 1773579849}
+  - {fileID: 1773579848}
+  - {fileID: 1773579847}
+  - {fileID: 1773579844}
+  _defaultTexture: {fileID: 2100000, guid: 4f622717845804dd3a905f5029204e9a, type: 2}
+  _deathTexture: {fileID: 2100000, guid: d0a066c89ca575b4687933cb8a66a54c, type: 2}
 --- !u!1 &1793252397
 GameObject:
   m_ObjectHideFlags: 0

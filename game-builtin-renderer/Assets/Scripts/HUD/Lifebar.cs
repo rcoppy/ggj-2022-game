@@ -27,7 +27,7 @@ public class Lifebar : MonoBehaviour
         GGJ2022.EnemyAI.PlayerState.OnDied += Death;
         GGJ2022.EnemyAI.PlayerState.OnResetHealth += ResetHealth;
         GGJ2022.EnemyAI.PlayerState.OnDamaged += TakeDamage;
-        
+
         UpdateLifeBar();
         UpdateHealth();
     }
