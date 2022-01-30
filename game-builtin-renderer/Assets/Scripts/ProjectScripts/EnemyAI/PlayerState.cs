@@ -20,7 +20,19 @@ namespace GGJ2022.EnemyAI
         
         public delegate void Died();
 
+        public delegate void Damaged(int amount);
+
+        public delegate void ResetHealth(int totalHealth);
+
+        public delegate void GainedALife();
+
         public Died OnDied;
+        public Damaged OnDamaged;
+        public ResetHealth OnResetHealth;
+        public GainedALife OnGainedALife;
+
+        [SerializeField] private int _lives = 3;
+        public int Lives => _lives;
 
         [SerializeField] private int _meleeDamage = 1;
         public int MeleeDamage => _meleeDamage; 
@@ -41,8 +53,20 @@ namespace GGJ2022.EnemyAI
         private CharacterAnimationManager _animationManager;
         private RelativeCharacterController _controller;
 
-        [SerializeField] private Collider _boundsCollider; 
+        [SerializeField] private Collider _boundsCollider;
 
+        public void AddLife()
+        {
+            _lives++; 
+            OnGainedALife?.Invoke();
+        }
+
+        public void SetFullHealth()
+        {
+            _health = _maxHealth;
+            OnResetHealth?.Invoke(_maxHealth); 
+        }
+        
         private void Awake()
         {
             _animationManager = GetComponent<CharacterAnimationManager>();
@@ -123,11 +147,14 @@ namespace GGJ2022.EnemyAI
         public void DoDamage(int damage)
         {
             _health = Math.Max(0, _health - damage);
+            
+            OnDamaged?.Invoke(damage);
 
-            if (_health <= 0)
+            if (_health <= 0 && !_isDead)
             {
                 _controller.SetIsInputEnabled(false);
-                _isDead = true; 
+                _isDead = true;
+                _lives--; 
                 OnDied?.Invoke();
             }
         }
