@@ -65,6 +65,16 @@ namespace GGJ2022
                 SetState(_state);
             }
         }
+
+        public void TriggerBossTheme()
+        {
+            SetState(States.BossFight);
+        }
+        
+        public void TriggerMainTheme()
+        {
+            SetState(States.MainLevel);
+        }
         
         public void SetState(States state)
         {

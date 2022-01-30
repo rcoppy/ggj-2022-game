@@ -15,25 +15,25 @@ MonoBehaviour:
   _characterList:
   - Name: Narrator
     SoundPath: event:/SFX/GeneralFX/Dialogue_Alex_(Real)
-    Photo: {fileID: 2800000, guid: 24d3d699e7c803446ba55139083ed366, type: 3}
+    Photo: {fileID: 2800000, guid: e6f9cda3551f1b2499e9e408c86fb334, type: 3}
   - Name: Claymore Ham
     SoundPath: event:/SFX/GeneralFX/Dialogue_Tyler
-    Photo: {fileID: 2800000, guid: a0930dcb482e84c208053cdcd63998d8, type: 3}
+    Photo: {fileID: 2800000, guid: 4b42429a168695f4c94d68440f690a22, type: 3}
   - Name: Developer 1
     SoundPath: event:/SFX/GeneralFX/Dialogue_Alex
-    Photo: {fileID: 2800000, guid: 78e9e608c3c9d47a3b312c2908d10f46, type: 3}
+    Photo: {fileID: 2800000, guid: 33aea2fa166da4adbb337fd47dbf11ca, type: 3}
   - Name: Developer 2
     SoundPath: event:/SFX/GeneralFX/Dialogue_Alex
-    Photo: {fileID: 2800000, guid: 6a9d1d221a3c94d83b614d921df0402e, type: 3}
+    Photo: {fileID: 2800000, guid: 1a3b9cfd3dfd243bf8bad5b4ddc24381, type: 3}
   - Name: Narrative Designer
     SoundPath: event:/SFX/GeneralFX/Dialogue_Mason_(Real)
-    Photo: {fileID: 2800000, guid: 5f7fa9a7940a64e79b5a42d9f661d42c, type: 3}
+    Photo: {fileID: 2800000, guid: 3f5bb1a88b5f44efeac6e4016eb656c2, type: 3}
   - Name: Artist
     SoundPath: event:/SFX/GeneralFX/Dialogue_Alex
-    Photo: {fileID: 2800000, guid: c7eb505c3df56494b8b17d90b8f606e5, type: 3}
+    Photo: {fileID: 2800000, guid: e3a7f4ec208ab463594a2ccd76f65596, type: 3}
   - Name: Composer
     SoundPath: event:/SFX/GeneralFX/Dialogue_Mason_(Real)
-    Photo: {fileID: 2800000, guid: 4f74a8e3dbf57465da215c9d648b3e9e, type: 3}
+    Photo: {fileID: 2800000, guid: 3f5bb1a88b5f44efeac6e4016eb656c2, type: 3}
   - Name: Creative Director
     SoundPath: event:/SFX/GeneralFX/Dialogue_Mason
-    Photo: {fileID: 2800000, guid: c7eb505c3df56494b8b17d90b8f606e5, type: 3}
+    Photo: {fileID: 2800000, guid: e3a7f4ec208ab463594a2ccd76f65596, type: 3}

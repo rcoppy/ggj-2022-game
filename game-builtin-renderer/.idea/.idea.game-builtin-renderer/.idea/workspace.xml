@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f976f6c3-3847-471f-82bc-43c450293ee1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.game-builtin-renderer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.game-builtin-renderer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Cutscenes/Cast.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Cutscenes/Cast.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ProjectScripts/LevelStateManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ProjectScripts/LevelStateManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ProjectScripts/MusicManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ProjectScripts/MusicManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +77,7 @@
       <updated>1643515623167</updated>
       <workItem from="1643515647448" duration="574000" />
       <workItem from="1643549886975" duration="9613000" />
+      <workItem from="1643574638431" duration="996000" />
     </task>
     <servers />
   </component>
