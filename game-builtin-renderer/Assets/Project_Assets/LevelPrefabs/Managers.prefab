@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8423a1200eb5e4cd09a45ec43e8cff4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _UIEventPath: event:/SFX/UI_Sound
+  _UIEventPath: event:/SFX/GeneralFX/UI_Sound
 --- !u!114 &1741258359
 MonoBehaviour:
   m_ObjectHideFlags: 0
