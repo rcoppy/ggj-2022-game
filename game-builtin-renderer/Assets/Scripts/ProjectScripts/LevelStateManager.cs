@@ -2,6 +2,7 @@ using Cinemachine;
 using UnityEngine;
 using GGJ2022.Audio;
 using GGJ2022.EnemyAI;
+using Unity.VisualScripting;
 using UnityEditor.Profiling.Memory.Experimental;
 
 namespace GGJ2022
@@ -26,6 +27,9 @@ namespace GGJ2022
             LevelCompleted
         }
 
+        [SerializeField] GameObject _defaultPlayerObject;
+        public GameObject PlayerObject => _defaultPlayerObject;
+        
         private bool _isPaused = false;
         private bool _shouldPlayHorror = false; 
         private States _state = States.MainLevel;
@@ -55,10 +59,12 @@ namespace GGJ2022
 
             if (_isPaused)
             {
+                Debug.Log("pause");
                 MusicManager.Instance.SetMusicState(MusicManager.States.Paused);
             }
             else
             {
+                Debug.Log("unpause");
                 SetState(_state);
             }
         }

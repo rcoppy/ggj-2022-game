@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2176911977362299519}
   - component: {fileID: 8742517974993994946}
   m_Layer: 0
-  m_Name: MeleeEnemy
+  m_Name: StaplerMeleeEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2300990955279441096}
+  - {fileID: 8442907574004942742}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46,10 +46,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.46436965
-  m_Height: 3.0095298
+  m_Radius: 0.36862046
+  m_Height: 2.95951
   m_Direction: 1
-  m_Center: {x: 0.035630345, y: 0.5047649, z: 0}
+  m_Center: {x: 0.0957492, y: 1.5366865, z: 0}
 --- !u!54 &2176911977362299512
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _props: {fileID: 11400000, guid: ff37106d7b0b940bcb9f89c4618883b8, type: 2}
---- !u!1001 &1757664343126457123
+--- !u!1001 &8260026994506883197
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -140,15 +140,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 20320373e31b548e38ed63e90e40f95c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.059924603
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 20320373e31b548e38ed63e90e40f95c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.96
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 20320373e31b548e38ed63e90e40f95c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.33267403
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 20320373e31b548e38ed63e90e40f95c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -184,19 +184,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20320373e31b548e38ed63e90e40f95c, type: 3}
---- !u!1 &1487616940198397554 stripped
+--- !u!4 &8442907574004942742 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 20320373e31b548e38ed63e90e40f95c, type: 3}
+  m_PrefabInstance: {fileID: 8260026994506883197}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9106536936443829548 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 20320373e31b548e38ed63e90e40f95c, type: 3}
-  m_PrefabInstance: {fileID: 1757664343126457123}
+  m_PrefabInstance: {fileID: 8260026994506883197}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &3418674776647849152
+--- !u!95 &5559682289576942526
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1487616940198397554}
+  m_GameObject: {fileID: 9106536936443829548}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: bef2fbd86d00e447392cc9ffeb510f73, type: 2}
@@ -209,8 +214,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!4 &2300990955279441096 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 20320373e31b548e38ed63e90e40f95c, type: 3}
-  m_PrefabInstance: {fileID: 1757664343126457123}
+--- !u!114 &6282597505493465443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9106536936443829548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81712e6ed7caf4359a90762ca622fe3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseEulerRotation: {x: 0, y: 0, z: 0}

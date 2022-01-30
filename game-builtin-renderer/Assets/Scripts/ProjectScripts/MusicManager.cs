@@ -56,10 +56,10 @@ namespace GGJ2022.Audio
             
             _parameterMap = new Dictionary<States, float>()
             {
-                [States.Paused] = 5f,
-                [States.BossTheme] = 2f,
-                [States.HorrorAmbience] = 4f,
-                [States.MainTheme] = 1f,
+                [States.Paused] = 5.1f,
+                [States.BossTheme] = 2.1f,
+                [States.HorrorAmbience] = 4.1f,
+                [States.MainTheme] = 1.1f,
                 [States.TitleScreen] = 0f
             }; 
             
