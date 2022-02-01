@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using FMOD.Studio;
 using FMODUnity;
@@ -74,6 +75,11 @@ namespace GGJ2022.Audio
             _music.setParameterByName(_parameterName, _parameterMap[state]);
         }
         
-        
+#if UNITY_EDITOR
+        private void OnValidate()
+        {
+            if (Application.isPlaying) SetMusicState(_state);
+        }
+#endif
     }
 }

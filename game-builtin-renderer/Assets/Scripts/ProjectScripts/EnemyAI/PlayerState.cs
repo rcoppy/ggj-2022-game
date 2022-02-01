@@ -137,7 +137,7 @@ namespace GGJ2022.EnemyAI
             {
                 if (c.transform.GetComponent<EnemyState>())
                 {
-                    return (c.transform.position - _boundsCollider.bounds.center).normalized; 
+                    return (c.transform.gameObject.GetComponent<Rigidbody>().worldCenterOfMass - _boundsCollider.bounds.center).normalized; 
                 }
             }
             

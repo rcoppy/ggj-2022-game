@@ -120,9 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475ff3cdacf8747689a6a63a1b56b93f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cameraShakeDuration: 0.35
-  _timeScale: 6
-  _shakeSeverity: 1
+  _cameraShakeDuration: 0.2
+  _timeScale: 12
+  _shakeSeverity: 0.3
 --- !u!114 &8887207906897585621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,3 +135,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b90b9983c59a4bc5b34018022bb822f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _defaultPlayerObject: {fileID: 0}

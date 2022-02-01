@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine.Events;
 
 namespace GGJ2022
@@ -17,30 +18,31 @@ namespace GGJ2022
         [Header("Which transforms activate trigger?")]
         [SerializeField]
         List<Transform> _triggeringTransforms;
-
+        
         // prevent double trigger (if player object has multiple colliders)
-        int i = 0;
+        HashSet<Transform> _currentTransforms;
 
         private void Awake()
         {
-            i = 0;
+            _currentTransforms = new HashSet<Transform>();
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (i == 0 && _triggeringTransforms.Contains(other.transform))
+            if (!_currentTransforms.Contains(other.transform) && 
+                _triggeringTransforms.Contains(other.transform))
             {
+                _currentTransforms.Add(other.transform);
                 OnTriggerActivated?.Invoke();
             }
-            i++;
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (_triggeringTransforms.Contains(other.transform))
+            if (_currentTransforms.Contains(other.transform))
             {
+                _currentTransforms.Remove(other.transform);
                 OnTriggerDeactivated?.Invoke();
-                i = 0; 
             }
         }
     }
