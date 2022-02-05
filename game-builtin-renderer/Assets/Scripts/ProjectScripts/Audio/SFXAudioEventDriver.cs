@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using FMODUnity; 
 
-namespace GGJ2022
+namespace GGJ2022.Audio
 {
     public class SFXAudioEventDriver : MonoBehaviour
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using FMODUnity;
 using System;
 
-namespace GGJ2022
+namespace GGJ2022.Audio
 {
     [CreateAssetMenu(fileName = "SFXMap", menuName = "GGJ2022/SFX event map", order = 1)]
     public class SFXFMODMap : ScriptableObject

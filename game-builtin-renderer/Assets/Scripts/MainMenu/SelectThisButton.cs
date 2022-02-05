@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using GGJ2022;
+using GGJ2022.Audio;
 using UnityEngine;
 using UnityEngine.UI;
 
