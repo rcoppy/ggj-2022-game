@@ -7540,6 +7540,7 @@ GameObject:
   - component: {fileID: 9103166160128490953}
   - component: {fileID: 7286144024930419010}
   - component: {fileID: 592751444740434494}
+  - component: {fileID: 724014737066012185}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -7886,6 +7887,20 @@ MonoBehaviour:
   _lives: 3
   _meleeDamage: 1
   _boundsCollider: {fileID: 9103166160128490949}
+--- !u!114 &724014737066012185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9103166160128490945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95454ddf72f714d48a491a41ea8f63e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultTexture: {fileID: 2100000, guid: 4f622717845804dd3a905f5029204e9a, type: 2}
+  _deathTexture: {fileID: 2100000, guid: d0a066c89ca575b4687933cb8a66a54c, type: 2}
 --- !u!1 &9130780398286028512
 GameObject:
   m_ObjectHideFlags: 0

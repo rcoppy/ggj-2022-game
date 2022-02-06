@@ -2,33 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeHamsMaterial : MonoBehaviour
+namespace GGJ2022.FX
 {
-    [SerializeField] GameObject[] _bodyParts;
-    [SerializeField] Material _defaultTexture;
-    [SerializeField] Material _deathTexture;
-
-    Material[] materials;
-
-    // Start is called before the first frame update
-    void Start()
+    public class ChangeHamsMaterial : MonoBehaviour
     {
-        materials = GetComponentInChildren<SkinnedMeshRenderer>().materials;
-        materials[0] = _defaultTexture;
-        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[0] = materials[0];
-        GGJ2022.EnemyAI.PlayerState.OnDied += Death;
-    }
+        [SerializeField] Material _defaultTexture;
+        [SerializeField] Material _deathTexture;
 
-    void Death()
-    {
-        ChangeMaterial(_deathTexture);
-    }
+        private Material[] materials;
+        private SkinnedMeshRenderer[] renderers;
 
-    void ChangeMaterial(Material newMat)
-    {
-        materials[0] = newMat;
-        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[0] = materials[0];
-    }
+        // Start is called before the first frame update
+        void Start()
+        {
+            renderers = GetComponentsInChildren<SkinnedMeshRenderer>();
+            GGJ2022.EnemyAI.PlayerState.OnDied += Death;
+        }
 
+        void Death()
+        {
+            ChangeMaterial(_deathTexture);
+        }
+
+        void ChangeMaterial(Material newMat)
+        {
+            foreach (var r in renderers)
+            {
+                var m = r.materials;
+                m[0] = newMat;
+
+                r.materials = m;
+            }
+
+            Debug.Log($"{renderers.Length} materials changed");
+        }
+    }
 }
-//m_Materials.Array.data[0]

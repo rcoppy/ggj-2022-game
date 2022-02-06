@@ -21,7 +21,7 @@ namespace GGJ2022.Dialogue
 
         public void TriggerDialogue()
         {
-            if (!_isTriggered)
+            if (!_onlyTriggerOnce || !_isTriggered)
             {
                 Debug.Log("triggering dialogue");
                 _isTriggered = true;

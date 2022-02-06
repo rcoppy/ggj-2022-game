@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1770228379}
-  m_IndirectSpecularColor: {r: 0.057016872, g: 0.08666253, b: 0.14837795, a: 1}
+  m_IndirectSpecularColor: {r: 0.05701669, g: 0.08666224, b: 0.14837748, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1791,6 +1791,10 @@ PrefabInstance:
       propertyPath: _shakeSeverity
       value: 0.095
       objectReference: {fileID: 0}
+    - target: {fileID: 8887207906897585621, guid: ebe61ff17aa9c437788c546763d64317, type: 3}
+      propertyPath: _defaultPlayerObject
+      value: 
+      objectReference: {fileID: 1821874996}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebe61ff17aa9c437788c546763d64317, type: 3}
 --- !u!114 &1069855221 stripped
@@ -3123,7 +3127,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7286144024930419010, guid: b6a6f0b71ffb949f19624cdad147e2d6, type: 3}
   m_PrefabInstance: {fileID: 1773579841}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1821874996}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8567b4294936462785d6a7b87daaa3a, type: 3}
@@ -3139,7 +3143,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9103166160128490952, guid: b6a6f0b71ffb949f19624cdad147e2d6, type: 3}
   m_PrefabInstance: {fileID: 1773579841}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1821874996}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0f03e0934afb4ebd8f5f63878a8d959, type: 3}
@@ -3150,7 +3154,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 592751444740434494, guid: b6a6f0b71ffb949f19624cdad147e2d6, type: 3}
   m_PrefabInstance: {fileID: 1773579841}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1821874996}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4af04e30c9464765b3383cf7804132a7, type: 3}
@@ -3399,6 +3403,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1821874996 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9103166160128490945, guid: b6a6f0b71ffb949f19624cdad147e2d6, type: 3}
+  m_PrefabInstance: {fileID: 1773579841}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1896786480
 PrefabInstance:
   m_ObjectHideFlags: 0
